@@ -1,0 +1,12 @@
+server:
+  port: 7777
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mysql://localhost/vue_board?serverTimezone=UTC&useSSL=false
+    username: kb
+    password: Hyosung
+    driverClassName: com.mysql.cj.jdbc.Driver

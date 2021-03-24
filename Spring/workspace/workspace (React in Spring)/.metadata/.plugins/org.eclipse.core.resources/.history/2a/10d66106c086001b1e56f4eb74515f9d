@@ -1,0 +1,22 @@
+package com.example.demo.uss.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+
+import com.example.demo.uss.domain.User;
+
+public interface UserService {
+	
+	public long count();
+	public boolean existsById(Long id);
+	public List<User> findAll();
+	public Optional<User> findOne();
+	public void deleteById(Long id);
+	public User save(User entity);
+	public User getOne(Long id);
+	
+}

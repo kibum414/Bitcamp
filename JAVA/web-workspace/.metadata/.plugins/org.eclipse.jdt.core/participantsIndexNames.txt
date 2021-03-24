@@ -1,0 +1,7 @@
+INDEX VERSION 1.131
+/Users/superstar_pkb/web-workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1812712323.index
+/web-study-01/src
+/Users/superstar_pkb/web-workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/462756211.index
+/web-study-02/src
+/Users/superstar_pkb/web-workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3334085208.index
+/self-study-01/src

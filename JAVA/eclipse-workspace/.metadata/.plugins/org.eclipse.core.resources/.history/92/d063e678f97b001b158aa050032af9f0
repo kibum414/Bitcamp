@@ -1,0 +1,12 @@
+package Lecture._20210303.Collection;
+
+// 배열은 사이즈 지정 이후 변경 불가능
+// Vector는 사이즈 제한 없이 변경 가능
+public class VectorTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

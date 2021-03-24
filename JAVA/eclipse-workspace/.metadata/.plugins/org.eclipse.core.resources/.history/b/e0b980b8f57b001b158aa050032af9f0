@@ -1,0 +1,10 @@
+package Lecture._20210303.Generic;
+
+public class WildCardTest2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,12 @@
+package Lecture._20210303.Generic;
+
+// Number만 쓰겠다
+// -> Integer, double, float 등등만 사용하겠다
+public class WildCard {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

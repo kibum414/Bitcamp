@@ -1,0 +1,25 @@
+com/example/board/service/board/VueBoardServiceImpl.java
+ com.example.board.service.board.VueBoardServiceImpl
+com/example/board/repository/random/RandomNumberRepository.java
+ com.example.board.repository.random.RandomNumberRepository
+com/example/board/entity/board/VueBoard.java
+ com.example.board.entity.board.VueBoard
+com/example/board/BoardApplication.java
+ com.example.board.BoardApplication
+com/example/board/entity/random/RandomNumber.java
+ com.example.board.entity.random.RandomNumber
+com/example/board/service/random/RandomNumberService.java
+ com.example.board.service.random.RandomNumberService
+com/example/board/service/random/RandomNumberServiceImpl.java
+ com.example.board.service.random.RandomNumberServiceImpl
+com/example/board/service/board/VueBoardService.java
+ com.example.board.service.board.VueBoardService
+com/example/board/controller/board/VueBoardController.java
+ com.example.board.controller.board.VueBoardController
+com/example/board/controller/random/RandomController.java
+ com.example.board.controller.random.RandomController
+com/example/board/repository/board/VueBoardRepository.java
+ com.example.board.repository.board.VueBoardRepository
+ com.example.board.repository.board.VueBoardRepository$1
+ com.example.board.repository.board.VueBoardRepository$2
+ com.example.board.repository.board.VueBoardRepository$3

@@ -1,0 +1,9 @@
+package Lecture._20210304;
+
+public class EnglishDic {
+
+	public static void main(String[] args) {
+		Map<String>
+	}
+
+}

@@ -1,0 +1,6 @@
+/* h1 다음에 있는 p만 적용
+   (p 여러 개일 경우 첫 번째만 적용) */
+h1 + p {
+    color: blue;
+    font-weight: bold;
+}

@@ -1,0 +1,12 @@
+package Lecture._20210305.Thread;
+
+public class MyThreadLambdaTest {
+
+	public static void main(String[] args) {
+		new Thread(() -> {
+			for (int i = 10; i >= 0; i--)
+				System.out.print(i + " ");
+		}).start();
+	}
+
+}

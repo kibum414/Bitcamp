@@ -1,0 +1,6 @@
+package Lecture._20210303;
+
+// Generic : <T> (T : type)
+public class d {
+
+}

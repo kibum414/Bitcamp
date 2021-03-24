@@ -1,0 +1,20 @@
+.schedule {
+    border-collapse: separate;
+    margin: 20px;
+}
+
+td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+
+#tb1 td {
+    /* 빈 셀도 전부 보여줌 */
+    empty-cells: show;
+}
+
+#tb2 td {
+    /* 빈 셀은 안 보여줌 */
+    empty-cells: hide;
+}

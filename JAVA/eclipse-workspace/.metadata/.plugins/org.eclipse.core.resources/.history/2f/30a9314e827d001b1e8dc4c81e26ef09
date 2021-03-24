@@ -1,0 +1,10 @@
+package Lecture._20210305.File;
+
+public class CopyLines {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

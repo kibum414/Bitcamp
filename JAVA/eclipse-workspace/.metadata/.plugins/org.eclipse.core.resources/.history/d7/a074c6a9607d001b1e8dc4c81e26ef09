@@ -1,0 +1,18 @@
+package Lecture._20210305.Thread;
+
+class MyRunnable implements Runnable {
+	public void run() {
+		for (int i = 10; i >= 0; i--)
+			System.out.println(i + " ");
+	}
+}
+
+public class MyRunnableTest {
+
+	public static void main(String[] args) {
+		Thread t = new Thread(new MyRunnable());
+		
+		t.start();
+	}
+
+}

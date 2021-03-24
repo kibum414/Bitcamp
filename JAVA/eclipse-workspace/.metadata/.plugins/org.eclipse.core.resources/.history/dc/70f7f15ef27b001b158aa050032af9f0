@@ -1,0 +1,14 @@
+package Lecture._20210303.Generic;
+
+public class OrderedPairTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		OrderedPair<String, Integer> p1 = new SimplePair<String, Integer>("mykey", 12345678);
+		SimplePair<String, String> p2 = new SimplePair<String, String>("java", "a programming language");
+		
+		System.out.println(p1.getKey() + " " + p1.getValue());
+		System.out.println(p2.getKey() + " " + p2.getValue());
+	}
+
+}
