@@ -8,15 +8,15 @@ drop sequence ADDRESS_SEQ;
 
 create table ADDRESS(
    SEQ number constraint ADDRESS_PK primary key, 
-   NAME varchar2(10), 
-   ADDR varchar2(20), 
+   NAME varchar2(30), 
+   ADDR varchar2(30), 
    RDATE date
 ); 
 create sequence ADDRESS_SEQ increment by 1 start with 1 nocache;
 
-insert into ADDRESS values(ADDRESS_SEQ.nextval, 'È«±æµ¿', '¼­¿ï½Ã', SYSDATE);
-insert into ADDRESS values(ADDRESS_SEQ.nextval, 'ÀÌ¼ø½Å', 'ºÎ»ê½Ã', SYSDATE);
-insert into ADDRESS values(ADDRESS_SEQ.nextval, '°­°¨Âù', 'ÀÎÃµ½Ã', SYSDATE);
+insert into ADDRESS values(ADDRESS_SEQ.nextval, 'í™ê¸¸ë™', 'ì„œìš¸ì‹œ', SYSDATE);
+insert into ADDRESS values(ADDRESS_SEQ.nextval, 'ì´ìˆœì‹ ', 'ë¶€ì‚°ì‹œ', SYSDATE);
+insert into ADDRESS values(ADDRESS_SEQ.nextval, 'ê°•ê°ì°¬', 'ì¸ì²œì‹œ', SYSDATE);
 
 commit;
 
