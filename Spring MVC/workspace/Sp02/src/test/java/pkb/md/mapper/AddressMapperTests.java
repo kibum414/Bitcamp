@@ -22,19 +22,21 @@ public class AddressMapperTests {
 		log.info("#AddressMapperTests testList(): " + addressMapper.list());
 	}*/
 	
-	/*
+	
 	@Test
 	public void testInsert() {
 		Address address = new Address(-1, "힘든", "세팅", null);
 		addressMapper.insert(address);
 		
 		log.info("#AddressMapperTests insert() 수행 완료");
-	}*/
+	}
 	
+	/*
 	@Test
 	public void testDelete() {
 		long seq = 12L;
 		addressMapper.delete(seq);
 		log.info("#AddressMapperTests delete() 수행 완료");
 	}
+	*/
 }

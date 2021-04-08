@@ -30,7 +30,10 @@
 			 value="classpath:/mybatis-config.xml"/>
 	</bean>
 	
+	<context:component-scan base-package="pkb.md.dao"/>
 	<context:component-scan base-package="pkb.md.mapper"/>
 	<mybatis-spring:scan base-package="pkb.md.mapper"/>
+	
+	<context:component-scan base-package="pkb.md.service"/>
 	
 </beans>
