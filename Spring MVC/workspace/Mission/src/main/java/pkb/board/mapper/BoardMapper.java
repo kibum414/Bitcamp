@@ -1,10 +1,10 @@
-package pkb.board.dao;
+package pkb.board.mapper;
 
 import java.util.List;
 
 import pkb.board.domain.Board;
 
-public interface BoardDao {
+public interface BoardMapper {
 	List<Board> list();
 	void insert(Board board);
 	Board select(long seq);

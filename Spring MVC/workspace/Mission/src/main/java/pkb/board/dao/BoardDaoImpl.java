@@ -61,7 +61,6 @@ public class BoardDaoImpl implements BoardDao {
 			}
 		}
 		
-		
 		return list;
 	}
 
@@ -131,8 +130,31 @@ public class BoardDaoImpl implements BoardDao {
 	}
 
 	@Override
-	public void update(long seq) {
-		Connection con = 
+	public void update(Board board) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		String sql = "update BOARD set WRITER = ?, EMAIL = ?, SUBJECT = ?, CONTENT = ? where SEQ = ?";
+		
+		try {
+			con = dataSource.getConnection();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, board.getWriter());
+			pstmt.setString(2, board.getEmail());
+			pstmt.setString(3, board.getSubject());
+			pstmt.setString(4, board.getContent());
+			pstmt.setLong(5, board.getSeq());
+			pstmt.executeUpdate();
+		} catch (SQLException se) {
+			log.info("BoardDaoImpl update() se: " + se);
+		} finally {
+			try {
+				if (pstmt != null) pstmt.close();
+				if (con != null) con.close();
+			} catch (SQLException se) {
+				
+			}
+		}
 	}
 
 	@Override
