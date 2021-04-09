@@ -22,14 +22,14 @@
 </head>
 <body>
 <center>
-<font color='gray' size='4' face='í´ë¨¼í¸ì§ì²´'>
+<font color='gray' size='4' face='휴먼편지체'>
 <hr width='650' size='2' color='gray' noshade>
 <h3> Spring Board</h3>
 </font>
-<font color='gray' size='4' face='í´ë¨¼í¸ì§ì²´'>
-<a href='list.do'>ëª©ë¡</a>
+<font color='gray' size='4' face='휴먼편지체'>
+<a href='list.do'>목록</a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href='write.do'>ê¸ì°ê¸°</a><br/>
+<a href='write.do'>글쓰기</a><br/>
 </font>
 <hr width='650' size='2' color='gray' noshade>
 </center>
@@ -60,8 +60,8 @@
 </tr>
 <tr>
 	 <td colspan='2' align='center'>
-		<input type='submit' value='ìì '>
-		<input type="button" value="ë¤ììë ¥" onclick="f()">
+		<input type='submit' value='수정'>
+		<input type="button" value="다시 입력" onclick="f()">
 	 </td>
 </tr>
 

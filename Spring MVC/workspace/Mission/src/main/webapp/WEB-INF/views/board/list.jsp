@@ -11,13 +11,13 @@
 </head>
 <body>
 <center>
-<font color='gray' size='4' face='í´ë¨¼í¸ì§ì²´'>
+<font color='gray' size='4' face='휴먼편지체'>
 <hr width='600' size='2' color='gray' noshade>
 <h3> Spring Board</h3>
-<font color='gray' size='4' face='í´ë¨¼í¸ì§ì²´'>
-<a href='../'>ì¸ë±ì¤</a>
+<font color='gray' size='4' face='휴먼편지체'>
+<a href='../'>인덱스</a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href='write.do'>ê¸ì°ê¸°</a><br/>
+<a href='write.do'>글쓰기</a><br/>
 </font>
 <hr width='600' size='2' color='gray' noshade>
 
@@ -71,8 +71,8 @@
       
 </TABLE>
 <hr width='600' size='2' color='gray' noshade>
-<font color='gray' size='3' face='í´ë¨¼í¸ì§ì²´'>
-    (ì´íì´ì§ì : 3)
+<font color='gray' size='3' face='휴먼편지체'>
+    (총 페이지 수 : 3)
     &nbsp;&nbsp;&nbsp;
     
         <a href="list.do?cp=1">
@@ -105,7 +105,7 @@
     ( TOTAL : 9 )
     
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-       íì´ì§ ì¸ì´ì¦ : 
+       페이지 사이즈 : 
     <select id="psId" name="ps" onchange="f(this)">
     	
     		

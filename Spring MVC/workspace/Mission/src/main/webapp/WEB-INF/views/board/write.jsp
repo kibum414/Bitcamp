@@ -15,8 +15,8 @@
 		   {
 		      if(document.input.elements[i].value == "")
 			  {
-			     alert("ëª¨ë  ê°ì ìë ¥ íìì¼ í©ëë¤. ");
-				 return false;
+			     alert("모든 값을 입력하셔야 합니다.");
+			     return false;
 			  }
 		   }
 		   document.input.submit();
@@ -24,14 +24,14 @@
 	</script>
   </head>
   <body onload="input.writer.focus()">
-	<font color="gray" size='4' face="í´ë¨¼í¸ì§ì²´">
+	<font color="gray" size='4' face="휴먼편지체">
     <center>
 	   <hr width="650" size='2' color="gray" noshade>
 	      <h3> Spring Board</h3>
-		  	<font color="gray" size="3" face="í´ë¨¼í¸ì§ì²´">
-			<a href='list.do'>ë¦¬ì¤í¸</a>
+		  	<font color="gray" size="3" face="휴먼편지체">
+			<a href='list.do'>리스트</a>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<a href='../'>ì¸ë±ì¤</a>
+			<a href='../'>인덱스</a>
 			</font>
 	   <hr width="650" size="2" color="gray" noshade>
 	</center>
@@ -56,8 +56,8 @@
 		  </tr>
 		  <tr>
 		     <td colspan="2" align="center">
-			    <input type="button" value="ì ì¡" onclick="check()">
-				<input type="reset" value="ë¤ììë ¥" onclick="input.writer.focus()">
+			    <input type="button" value="전송" onclick="check()">
+				<input type="reset" value="다시 입력" onclick="input.writer.focus()">
 			 </td>
 		  </tr>
 	   </table>
