@@ -4,19 +4,22 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="pkb.board.mapper.BoardMapper">
 	<select id="list" resultType="Board">
-		select * from BOARD order by SEQ desc
+		SELECT * FROM board ORDER BY seq DESC
 	</select>
 	
 	<insert id="insert" parameterType="Board">
-		insert into BOARD values(BOARD_SEQ.nextval, #{writer}, #{}, #{}, #{}, SYSDATE)
+		INSERT INTO board VALUES(BOARD_SEQ.NEXTVAL, #{writer}, #{email}, #{subject}, #{content}, SYSDATE)
 	</insert>
 	
 	<select id="select" parameterType="long">
+		SELECT * FROM board WHERE seq=#{seq}
 	</select>
 	
 	<update id="update" parameterType="Board">
+		UPDATE board SET writer=#{writer}, email=#{email}, subject=#{subject}, content=#{content} 
 	</update>
 	
 	<delete id="delete" parameterType="long">
+		DELETE FROM board WHERE seq=#{seq}
 	</delete>
 </mapper>
