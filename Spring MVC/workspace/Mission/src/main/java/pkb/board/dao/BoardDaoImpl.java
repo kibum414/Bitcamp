@@ -98,34 +98,41 @@ public class BoardDaoImpl implements BoardDao {
 		Board board = new Board();
 		
 		Connection con = null;
-		Statement stmt = null;
+		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
 		String sql = "select * from BOARD where SEQ=?";
 		
 		try {
 			con = dataSource.getConnection();
-			stmt = con.createStatement();
-			rs = stmt.executeQuery(sql);
+			pstmt = con.prepareStatement(sql);
+			pstmt.setLong(1, seq);
+			rs = pstmt.executeQuery();
 			
-			
+			board.setSeq(rs.getLong(1));
+			board.setWriter(rs.getString(2));
+			board.setEmail(rs.getString(3));
+			board.setSubject(rs.getString(4));
+			board.setContent(rs.getString(5));
+			board.setRdate(rs.getDate(6));
 		} catch (SQLException se) {
-			log.info("BoardDaoImpl select()");
+			log.info("BoardDaoImpl select() se: " + se);
 		} finally {
 			try {
-				
-			} catch () {
+				if (rs != null) rs.close();
+				if (pstmt != null) pstmt.close();
+				if (con != null) con.close();
+			} catch (SQLException se) {
 				
 			}
 		}
 
-		return null;
+		return board;
 	}
 
 	@Override
-	public void update() {
-		// TODO Auto-generated method stub
-
+	public void update(long seq) {
+		Connection con = 
 	}
 
 	@Override

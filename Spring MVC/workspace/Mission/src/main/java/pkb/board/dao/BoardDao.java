@@ -8,6 +8,6 @@ public interface BoardDao {
 	List<Board> list();
 	void insert(Board board);
 	Board select(long seq);
-	void update();
+	void update(long seq);
 	void delete(long seq);
 }
