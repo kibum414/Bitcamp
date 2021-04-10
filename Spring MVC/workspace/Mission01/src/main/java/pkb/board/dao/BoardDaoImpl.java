@@ -107,6 +107,7 @@ public class BoardDaoImpl implements BoardDao {
 			pstmt = con.prepareStatement(sql);
 			pstmt.setLong(1, seq);
 			rs = pstmt.executeQuery();
+			rs.next();
 			
 			board.setSeq(rs.getLong(1));
 			board.setWriter(rs.getString(2));

@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8"
-	import="java.util.*, pkb.board.domain.Board"%>
+	import="java.util.*, pkb.board.domain.Board" %>
 
 <!DOCTYPE html>
 <html>
@@ -23,14 +23,14 @@ a {
 		</font>
 		<hr width='600' size='2' color='gray' noshade>
 
-		<TABLE border='2' width='600' align='center' noshade>
-			<TR size='2' align='center' noshade bgcolor='AliceBlue'>
+		<table border='2' width='600' align='center' noshade>
+			<tr size='2' align='center' noshade bgcolor='AliceBlue'>
 				<th bgcolor='AliceBlue'>No</th>
 				<th color='gray'>Writer</th>
 				<th color='gray'>E-mail</th>
 				<th color='gray'>Subject</th>
 				<th color='gray'>Date</th>
-			</TR>
+			</tr>
 
 <%
 			List<Board> list = (List<Board>) request.getAttribute("list");
@@ -59,7 +59,7 @@ a {
 				}
 			}
 %>
-		</TABLE>
+		</table>
 		<hr width='600' size='2' color='gray' noshade>
 		<font color='gray' size='3' face='휴먼편지체'>
 			(총 페이지 수 : 3)

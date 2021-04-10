@@ -36,7 +36,7 @@
 			<td><%= dto.getName() %></td>
 			<td><%= dto.getAddr() %></td>
 			<td><%= dto.getRdate() %></td>
-			<td align='center'><a href='del.do?seq=<%= dto.getSeq()%>'>삭제</a></td>
+			<td align='center'><a href='del.do?seq=<%= dto.getSeq() %>'>삭제</a></td>
 		</tr>
 <%
 		}
