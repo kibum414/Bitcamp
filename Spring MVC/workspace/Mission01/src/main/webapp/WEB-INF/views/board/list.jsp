@@ -48,37 +48,17 @@ a {
 				<td><%= dto.getSeq() %></td>
 				<td><%= dto.getWriter() %></td>
 				<td><%= dto.getEmail() %></td>
-				<td><%= dto.getSubject() %></td>
+				<td>
+					<a href='read.do?seq=<%= dto.getSeq() %>'>
+						<%= dto.getSubject() %>
+					</a>
+				</td>
 				<td><%= dto.getRdate() %></td>
 			</tr>
 <%
 				}
 			}
 %>
-
-			<TR align='center' noshade>
-				<TD>17</TD>
-				<TD>ê°</TD>
-				<TD>ë</TD>
-				<TD><a href="content.do?seq=17"> ë¤ </a></TD>
-				<TD>2018-12-14</TD>
-			</TR>
-
-			<TR align='center' noshade>
-				<TD>16</TD>
-				<TD>ë°ì°¸15</TD>
-				<TD>chm@hanmail.net</TD>
-				<TD><a href="content.do?seq=16"> ì ëª©15 </a></TD>
-				<TD>2018-12-14</TD>
-			</TR>
-
-			<TR align='center' noshade>
-				<TD>15</TD>
-				<TD>ì¤íí14</TD>
-				<TD>oh@hanmail.net</TD>
-				<TD><a href="content.do?seq=15"> ì ëª©14 </a></TD>
-				<TD>2018-12-14</TD>
-			</TR>
 		</TABLE>
 		<hr width='600' size='2' color='gray' noshade>
 		<font color='gray' size='3' face='휴먼편지체'>
@@ -104,7 +84,7 @@ a {
 				var ps = select.value;
 				//alert("ps : " + ps);
 				location.href="list.do?ps="+ps;
-      				}
+      			}
 			</script>
 		</font>
 		<hr width='600' size='2' color='gray' noshade>

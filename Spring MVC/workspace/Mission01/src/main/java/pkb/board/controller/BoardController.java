@@ -65,7 +65,7 @@ public class BoardController {
 		return "redirect:read.do";
 	}
 	
-	@GetMapping("del.do")
+	@GetMapping("delete.do")
 	public String delete(long seq) {
 		boardService.deleteS(seq);
 		
