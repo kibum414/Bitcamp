@@ -69,16 +69,17 @@ public class BoardDaoImpl implements BoardDao {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		
-		String sql = "insert into BOARD values(BOARD_SEQ.nextval, ?, ?, ?, ?, SYSDATE)";
+		//String sql = "insert into BOARD values(BOARD_SEQ.nextval, ?, ?, ?, ?, SYSDATE)";
+		String sql = "insert into BOARD values(BOARD_SEQ.nextval, '홍길동', '홍길동', '길동아', '동길홍', SYSDATE)";
 		
 		try {
 			con = dataSource.getConnection();
 			pstmt = con.prepareStatement(sql);
 			
-			pstmt.setString(1, board.getWriter());
-			pstmt.setString(2, board.getEmail());
-			pstmt.setString(3, board.getSubject());
-			pstmt.setString(4, board.getContent());
+//			pstmt.setString(1, board.getWriter());
+//			pstmt.setString(2, board.getEmail());
+//			pstmt.setString(3, board.getSubject());
+//			pstmt.setString(4, board.getContent());
 			pstmt.executeUpdate();
 		} catch (SQLException se) {
 			log.info("BoardDaoImpl insert() se: " + se);

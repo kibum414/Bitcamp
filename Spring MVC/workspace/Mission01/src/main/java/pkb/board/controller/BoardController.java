@@ -60,9 +60,10 @@ public class BoardController {
 	
 	@PostMapping("update.do")
 	public String update(Board board) {
+		System.out.println(board.getSeq());
 		boardService.updateS(board);
 		
-		return "redirect:read.do";
+		return "redirect:list.do";
 	}
 	
 	@GetMapping("delete.do")

@@ -11,9 +11,9 @@ create table BOARD(
    WRITER varchar(15), 
    EMAIL varchar(20),
    SUBJECT varchar(20), 
-   CONTENT varchar(20), 
+   CONTENT varchar(100), 
    RDATE date
-); 
+);
 
 insert into BOARD(writer, email, subject, content, rdate) values('공병찬', 'kim@hanmail.net','제목1', '내용1', now());
 insert into BOARD(writer, email, subject, content, rdate) values('김보라', 'lee@hanmail.net','제목2', '내용2', now());

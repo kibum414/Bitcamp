@@ -1,5 +1,4 @@
-<%@ page contentType="text/html; charset=utf-8" 
-	import="pkb.board.domain.Board" %>
+<%@ page contentType="text/html; charset=utf-8" import="pkb.board.domain.Board" %>
 
 <!DOCTYPE html>
 <html>
@@ -11,8 +10,7 @@ a {
 	text-decoration: none
 }
 </style>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 	    function f(){
 	    	input.email.value = "";
@@ -38,17 +36,17 @@ a {
 		<hr width='650' size='2' color='gray' noshade>
 	</div>
 
-	<form name='input' method='post' action='update.do'>
-		<input type="hidden" name="seq" value="17">
-		<table border='0' width='600' align='center' cellpadding='3'
-			cellspacing='1' bordercolor='gray'>
 <%
 			Board dto = (Board) request.getAttribute("board");
 %>
+	<form name='input' method='post' action='update.do'>
+		<input type="hidden" name="seq" value="<%= dto.getSeq() %>">
+		<table border='0' width='600' align='center' 
+			cellpadding='3' cellspacing='1' bordercolor='gray'>
 			<tr>
 				<td width='20%' align='center'>WRITER</td>
 				<td>
-					<input name='writer' readonly value='<%= dto.getWriter() %>' size="81" />
+					<input name='writer' readonly value="<%= dto.getWriter() %>" size="81" />
 				</td>
 			</tr>
 
@@ -69,7 +67,9 @@ a {
 			<tr>
 				<td align='center'>CONTENT</td>
 				<td>
-					<textarea id='ta' name='content' rows='15' cols='70'><%= dto.getContent() %></textarea>
+					<textarea id='ta' name='content' rows='15' cols='70'>
+						<%= dto.getContent() %>
+					</textarea>
 				</td>
 			</tr>
 			<tr>
