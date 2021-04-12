@@ -69,6 +69,8 @@ public class AddressServiceImpl implements AddressService {
 		
 		if (flag) {
 			log.info("#업로드 성공");
+			
+			
 		} else {
 			log.info("#업로드 실패");
 		}

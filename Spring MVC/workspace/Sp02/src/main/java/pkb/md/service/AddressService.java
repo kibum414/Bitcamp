@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.web.multipart.MultipartFile;
 
 import pkb.md.domain.Address;
+import pkb.md.domain.AddressFile;
 
 public interface AddressService {
 	List<Address> listS();

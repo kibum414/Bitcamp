@@ -54,6 +54,8 @@ public class AddressController {
 	public String write(Address address, @RequestParam ArrayList<MultipartFile> files) { // 폼에 집어 넣는 것
 		log.info("#name: " + address.getName() + ", addr: " + address.getAddr());
 		
+		addressService.insertS(address);
+		
 		for (MultipartFile file: files) {
 			String ofname = file.getOriginalFilename();
 			
@@ -65,8 +67,6 @@ public class AddressController {
 				addressService.saveStore(file);
 			}
 		}
-		
-		addressService.insertS(address);
 		
 		return "redirect:list.do"; // 재호출. 디폴드 값 : forward
 	}
