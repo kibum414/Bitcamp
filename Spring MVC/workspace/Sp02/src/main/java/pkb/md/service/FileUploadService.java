@@ -1,15 +1,8 @@
 package pkb.md.service;
 
-import java.util.List;
-
 import org.springframework.web.multipart.MultipartFile;
 
-import pkb.md.domain.Address;
-
-public interface AddressService {
-	List<Address> listS();
-	void insertS(Address address);
-	void deleteS(long seq);
+public interface FileUploadService {
 	String saveStore(MultipartFile file);
 	boolean writeFile(MultipartFile file, String saveFileName);
 }
