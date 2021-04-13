@@ -14,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import lombok.extern.log4j.Log4j;
 import pkb.md.domain.Address;
-import pkb.md.filesetting.Path;
+import pkb.md.domain.AddressFile;
 import pkb.md.service.AddressService;
 
 @Log4j
@@ -52,20 +52,14 @@ public class AddressController {
 		Address address = new Address(-1, name, addr, null);
 	*/
 	public String write(Address address, @RequestParam ArrayList<MultipartFile> files) { // 폼에 집어 넣는 것
-		log.info("#name: " + address.getName() + ", addr: " + address.getAddr());
+		ArrayList<AddressFile> uploadedFileList = null;
 		
-		addressService.insertS(address);
-		
-		for (MultipartFile file: files) {
-			String ofname = file.getOriginalFilename();
-			
-			log.info("#ofname: " + ofname);
-			log.info("#size: " + file.getSize());
-			
-			if (ofname != null) ofname.trim();
-			if (ofname.length() != 0) {
-				addressService.saveStore(file);
-			}
+		try {
+			uploadedFileList = addressService.insertS(address, files);
+			log.info("#AddressController (1): " + uploadedFileList); // null ?
+		} catch (Exception ex) {
+			log.info("#AddressController (2): " + uploadedFileList); // null ?
+			addressService.removeFiles();
 		}
 		
 		return "redirect:list.do"; // 재호출. 디폴드 값 : forward
@@ -73,7 +67,8 @@ public class AddressController {
 	
 	@GetMapping("del.do")
 	public String delete(long seq) {
-		addressService.deleteS(seq);
+		addressService.removeFiles(seq); // 업로드 된 파일들 제거
+		addressService.deleteS(seq); // DB 데이터 제거
 		
 		return "redirect:list.do";
 	}

@@ -2,9 +2,11 @@
 <!DOCTYPE configuration
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
 <configuration>
    <typeAliases>
    	  <typeAlias alias="Address" type="pkb.md.domain.Address"/>
+   	  <typeAlias alias="AddressFile" type="pkb.md.domain.AddressFile"/>
    </typeAliases>
    <mappers>
    	  <mapper resource="pkb/md/mapper/AddressMapper.xml"/>

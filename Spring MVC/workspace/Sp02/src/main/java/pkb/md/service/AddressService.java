@@ -1,5 +1,6 @@
 package pkb.md.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.web.multipart.MultipartFile;
@@ -9,8 +10,11 @@ import pkb.md.domain.AddressFile;
 
 public interface AddressService {
 	List<Address> listS();
-	void insertS(Address address);
+	//void insertS(Address address);
+	
 	void deleteS(long seq);
-	String saveStore(MultipartFile file);
-	boolean writeFile(MultipartFile file, String saveFileName);
+	void removeFiles(long seq); // delete 할 때
+	
+	ArrayList<AddressFile> insertS(Address address, ArrayList<MultipartFile> files);
+	void removeFiles(); // 업로딩 실패 시
 }

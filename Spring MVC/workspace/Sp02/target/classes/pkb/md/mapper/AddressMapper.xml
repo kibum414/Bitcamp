@@ -6,10 +6,25 @@
 	<select id="list" resultType="Address">
 		select * from ADDRESS order by SEQ desc
 	</select>
+	<!-- 
 	<insert id="insert" parameterType="Address">
 		insert into ADDRESS values(ADDRESS_SEQ.nextval, #{name}, #{addr}, SYSDATE)
 	</insert>
+	 -->
 	<delete id="delete" parameterType="long">
 		delete from ADDRESS where SEQ=#{seq}
 	</delete>
+	<select id="fileListForRemove" parameterType="long" resultType="AddressFile">
+		select * from ADDRESS_FILE where SEQ=#{seq}
+	</select>
+	
+	<insert id="insertSelectKey" parameterType="Address">
+		<selectKey keyProperty="seq" order="BEFORE" resultType="long">
+			select ADDRESS_SEQ.nextval from dual
+		</selectKey>
+		insert into ADDRESS values(#{seq}, #{name}, #{addr}, SYSDATE)
+	</insert>
+	<insert id="insertF" parameterType="AddressFile">
+		insert into ADDRESS_FILE values(ADDRESS_FILE_SEQ.nextval, #{ofname}, #{sfname}, #{fsize}, #{seq})
+	</insert>
 </mapper>
