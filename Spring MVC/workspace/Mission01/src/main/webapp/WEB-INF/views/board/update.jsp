@@ -67,9 +67,7 @@ a {
 			<tr>
 				<td align='center'>CONTENT</td>
 				<td>
-					<textarea id='ta' name='content' rows='15' cols='70'>
-						<%= dto.getContent() %>
-					</textarea>
+					<textarea id='ta' name='content' rows='15' cols='70'><%= dto.getContent() %></textarea>
 				</td>
 			</tr>
 			<tr>

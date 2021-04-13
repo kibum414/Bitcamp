@@ -7,36 +7,43 @@ import org.springframework.stereotype.Service;
 
 import pkb.board.dao.BoardDao;
 import pkb.board.domain.Board;
+import pkb.board.mapper.BoardMapper;
 
 @Service
 public class BoardServiceImpl implements BoardService {
 
 	@Autowired
-	private BoardDao boardDao;
+	private BoardMapper boardMapper;
+	// private BoardDao boardDao;
 	
 	@Override
 	public List<Board> listS() {
-		return boardDao.list();
+		return boardMapper.list();
+		// return boardDao.list();
 	}
 
 	@Override
 	public void insertS(Board board) {
-		boardDao.insert(board);
+		boardMapper.insert(board);
+		// boardDao.insert(board);
 	}
 
 	@Override
 	public Board selectS(long seq) {
-		return boardDao.select(seq);
+		return boardMapper.select(seq);
+		// return boardDao.select(seq);
 	}
 
 	@Override
 	public void updateS(Board board) {
-		boardDao.update(board);
+		boardMapper.update(board);
+		// boardDao.update(board);
 	}
 
 	@Override
 	public void deleteS(long seq) {
-		boardDao.delete(seq);
+		boardMapper.delete(seq);
+		// boardDao.delete(seq);
 	}
 
 }

@@ -11,12 +11,12 @@
 		INSERT INTO board VALUES(BOARD_SEQ.NEXTVAL, #{writer}, #{email}, #{subject}, #{content}, SYSDATE)
 	</insert>
 	
-	<select id="select" parameterType="long">
+	<select id="select" parameterType="long" resultType="Board">
 		SELECT * FROM board WHERE seq=#{seq}
 	</select>
 	
 	<update id="update" parameterType="Board">
-		UPDATE board SET writer=#{writer}, email=#{email}, subject=#{subject}, content=#{content} 
+		UPDATE board SET email=#{email}, subject=#{subject}, content=#{content} WHERE seq=#{seq}
 	</update>
 	
 	<delete id="delete" parameterType="long">
