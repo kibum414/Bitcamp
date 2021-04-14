@@ -8,9 +8,8 @@ import java.sql.Date;
 public class Address {
 
     @Id
-    @GeneratedValue
-    @Column(name = "seq")
-    private long seq;
+    @Column(name = "address_id")
+    private long addressId;
 
     @Column(name = "name")
     private String name;
@@ -20,5 +19,4 @@ public class Address {
 
     @Column(name = "rdate")
     private Date rdate;
-
 }
