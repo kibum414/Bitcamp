@@ -11,6 +11,6 @@ public class HomeController {
 
     @GetMapping("/")
     public String init() {
-        return new SimpleDateFormat("yyMMdd HH:mm").format(new Date());
+        return new SimpleDateFormat("yyyy-MM-dd HH:mm").format(new Date());
     }
 }
