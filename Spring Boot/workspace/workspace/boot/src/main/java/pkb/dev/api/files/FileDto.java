@@ -1,11 +1,10 @@
 package pkb.dev.api.files;
 
 import lombok.Data;
-
-import javax.persistence.Column;
-import javax.persistence.Id;
+import org.springframework.stereotype.Component;
 
 @Data
+@Component
 public class FileDto {
 
     private long fileId;

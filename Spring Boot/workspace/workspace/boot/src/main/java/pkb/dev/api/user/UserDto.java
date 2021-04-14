@@ -1,10 +1,10 @@
 package pkb.dev.api.user;
 
 import lombok.Data;
-
-import javax.persistence.Column;
+import org.springframework.stereotype.Component;
 
 @Data
+@Component
 public class UserDto {
 
     private long userId;
