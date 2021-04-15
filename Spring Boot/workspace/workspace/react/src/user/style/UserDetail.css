@@ -1,0 +1,110 @@
+body {
+  font-family: Dotum, "돋움", Helvetica, sans-serif, "Apple SD Gothic Neo";
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  display: block;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+}
+
+table {
+  position: relative;
+  width: 100%;
+  table-layout: fixed;
+  border-spacing: 0;
+  border-collapse: collapse;
+  word-wrap: break-word;
+  word-break: keep-all;
+  border: 0;
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 25px;
+  border-left: none;
+  border-right: none;
+}
+
+th,
+td {
+  line-height: 14px;
+  text-align: left;
+  vertical-align: top;
+  letter-spacing: -1px;
+  border: 0;
+  border-top: 1px solid #e5e5e5;
+}
+
+th {
+  color: #333;
+  border-right: 1px solid #e5e5e5;
+  background: #f9f9f9;
+  padding: 32px 31px 32px;
+  width: 20%;
+}
+
+td {
+  color: #565656;
+  padding: 32px 0 32px 30px;
+}
+
+/* Set a style for all buttons */
+button {
+  border: 1px solid #24b753;
+  background-color: #10c247;
+  color: white;
+  margin: 5px 0 25px 0;
+  display: block;
+  cursor: pointer;
+  width: 100%;
+  height: 50px;
+  opacity: 0.9;
+  font-size: large;
+}
+
+button:hover {
+  opacity: 1;
+}
+
+/* Extra styles for the cancel button */
+.delete_btn {
+  background-color: #f33326;
+  border: 1px solid #c73924;
+}
+
+/* Add padding to container elements */
+.user_form {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container {
+  position: relative;
+  max-width: 954px;
+  padding: 32px 51px 95px;
+  margin: 0 auto;
+}
+
+.content {
+  position: relative;
+}
+
+/* Clear floats */
+.btn_area::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancel_btn,
+  .modify_btn {
+    width: 100%;
+  }
+}

@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import ArticleDetail from './board/component/ArticleDetail';
 import './index.css';
-import App from './App';
-import Home from './common/component/Home';
+//import App from './App';
+//import Home from './common/component/Home';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-    <Home />,
+    <ArticleDetail />,
   document.getElementById('root')
 );
 

@@ -19,6 +19,7 @@ const HomeNav = () => {
               <li><a href="#">WHO</a></li>
               <li><a href="#">WHAT</a></li>
               <li><a href="#">WHERE</a></li>
+              <li><a href="#">BOARD</a></li>
             </ul>
           </div>
         </div>
