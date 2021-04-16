@@ -2,15 +2,9 @@ import logo from 'logo.svg';
 import 'App.css';
 import { Route } from 'react-router-dom';
 import Home from 'common/component/Home'
-import SignUpForm from 'user/component/SignUpForm'
-import LoginForm from 'user/component/LoginForm'
-import UserDetail from 'user/component/UserDetail'
-import News from 'board/component/News'
-import SeoulCCTV from 'board/component/SeoulCCTV'
-import ArticleList from 'article/component/ArticleList'
-import ArticleWrite from 'article/component/ArticleWrite'
-import ArticleDetail from 'article/component/ArticleDetail'
-import ArticleUpdate from 'article/component/ArticleUpdate'
+import { SignUpForm, LoginForm, UserDetail } from 'user/index'
+import { News, SeoulCCTV } from 'board/index'
+import { ArticleDetail, ArticleList, ArticleUpdate, ArticleWrite } from 'article/index'
 
 const App = () => {
   return (
