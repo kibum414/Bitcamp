@@ -27,10 +27,6 @@ const SeoulCCTV = () => {
               </tr>
             </table>
           </div>
-
-          <div className="board_btn_area">
-            <button type="submit" className="borad_btn board_write_btn"><b>글쓰기</b></button>
-          </div>
         </div>
       </form>
     </>

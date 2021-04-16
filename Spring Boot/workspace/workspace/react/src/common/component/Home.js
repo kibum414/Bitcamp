@@ -10,13 +10,13 @@ import HomeFooter from 'common/component/HomeFooter'
 const Home = () => {
 
   return (
-    <>
+    <div className="home">
       <HomeNav />
       <HomeContainerFirst />
       <HomeContainerSecond />
       <HomeContainerThird />
       <HomeFooter />
-    </>
+    </div>
   )
 }
 
