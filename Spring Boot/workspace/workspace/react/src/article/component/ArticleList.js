@@ -1,5 +1,5 @@
 import React from 'react'
-import '../style/ArticleList.css'
+import 'article/style/ArticleList.css'
 
 const ArticleList = () => {
 

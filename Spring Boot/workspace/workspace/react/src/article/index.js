@@ -1,0 +1,1 @@
+export { default as ArticleDetail } from 'article/component/ArticleDetail'

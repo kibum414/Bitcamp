@@ -1,5 +1,5 @@
 import React from 'react'
-import '../style/SignUpForm.css'
+import 'user/style/SignUpForm.css'
 
 const SignUpForm = () => {
 

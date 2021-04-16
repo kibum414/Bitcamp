@@ -1,13 +1,13 @@
 import React from 'react'
-import '../style/ArticleUpdate.css'
+import 'article/style/ArticleDetail.css'
 
-const ArticleUpdate = () => {
+const ArticleDetail = () => {
 
   return (
     <>
-      <h1>글 수정</h1>
+      <h1>게시판</h1>
 
-      <form className="update_form">
+      <form className="detail_form">
         <div className="container">
           <div className="content">
             <table>
@@ -20,13 +20,13 @@ const ArticleUpdate = () => {
               <tr>
                 <th>제목</th>
                 <td>
-                  <input type="text" name="subject" />
+                  제목1
                 </td>
               </tr>
               <tr>
                 <th>내용</th>
                 <td>
-                  <textarea name="content" />
+                  내용1
                 </td>
               </tr>
             </table>
@@ -34,6 +34,10 @@ const ArticleUpdate = () => {
 
           <div className="btn_area">
             <button type="submit" className="update_btn"><b>수정</b></button>
+
+            <button type="button" className="delete_btn"><b>삭제</b></button>
+            <button type="button" className="list_btn"><b>목록</b></button>
+
           </div>
         </div>
       </form>
@@ -41,4 +45,4 @@ const ArticleUpdate = () => {
   )
 }
 
-export default ArticleUpdate
+export default ArticleDetail

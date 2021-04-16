@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import News from 'board/component/News'
 
 const HomeNav = () => {
 
@@ -19,7 +21,8 @@ const HomeNav = () => {
               <li><a href="#">WHO</a></li>
               <li><a href="#">WHAT</a></li>
               <li><a href="#">WHERE</a></li>
-              <li><a href="#">BOARD</a></li>
+              <li><Link to={'/board/news'}>NEWS</Link></li>
+              <li><Link to={'/board/seoul-cctv'}>SEOUL CCTV</Link></li>
             </ul>
           </div>
         </div>

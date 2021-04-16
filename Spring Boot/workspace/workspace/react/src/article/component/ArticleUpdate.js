@@ -1,20 +1,20 @@
 import React from 'react'
-import '../style/ArticleWrite.css'
+import 'article/style/ArticleUpdate.css'
 
-const ArticleWrite = () => {
+const ArticleUpdate = () => {
 
   return (
     <>
-      <h1>글쓰기</h1>
+      <h1>글 수정</h1>
 
-      <form className="write_form">
+      <form className="update_form">
         <div className="container">
           <div className="content">
             <table>
               <tr>
                 <th>작성자</th>
                 <td>
-                  <input type="text" name="writer" />
+                  작성자1
                 </td>
               </tr>
               <tr>
@@ -33,7 +33,7 @@ const ArticleWrite = () => {
           </div>
 
           <div className="btn_area">
-            <button type="submit" className="write_btn"><b>작성</b></button>
+            <button type="submit" className="update_btn"><b>수정</b></button>
           </div>
         </div>
       </form>
@@ -41,4 +41,4 @@ const ArticleWrite = () => {
   )
 }
 
-export default ArticleWrite
+export default ArticleUpdate
