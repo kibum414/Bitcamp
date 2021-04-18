@@ -1,11 +1,10 @@
 import React from 'react'
 import 'user/style/SignUpForm.css'
-import 'user/style/Common.css'
 
 const SignUpForm = () => {
 
   return (
-    <div className="signup">
+    <>
       <h1>회원가입</h1>
       
       <form className="join_form">
@@ -48,7 +47,7 @@ const SignUpForm = () => {
           </div>
         </div>
       </form>
-    </div>
+    </>
   )
 }
 
