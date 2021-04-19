@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import 'article/style/ArticleList.css'
+import axios from 'axios'
 
 const SeoulCCTV = () => {
+  const [items, setItems] = useState({})
+  axios.get(`../data/SeoulCCTV.json`) // function 구조 (데이터 없으므로 생략)
+    .then(res => {
+      setItems(res.data)
+    }) // consumer 구조
+    .catch(err => { }) // consumer 구조
 
   return (
     <>
@@ -18,13 +25,19 @@ const SeoulCCTV = () => {
                 <th>카메라명칭</th>
                 <th>설명</th>
               </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
+              {
+                items.map((item, i) => {
+                  return (
+                    <tr key={i}>
+                      <td>{item.i}</td>
+                      <td>{item.checktime}</td>
+                      <td>{item.deviceid}</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  )
+                })
+              }
             </table>
           </div>
         </div>
