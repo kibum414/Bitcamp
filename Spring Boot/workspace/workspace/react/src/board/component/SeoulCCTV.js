@@ -1,17 +1,23 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import 'article/style/ArticleList.css'
 import axios from 'axios'
+import HomeNav from 'common/component/HomeNav'
 
 const SeoulCCTV = () => {
   const [items, setItems] = useState([])
-  axios.get(`/data/SeoulCCTV.json`) // function 구조 (데이터 없으므로 생략)
-    .then(res => {
-      setItems(res.data.DATA)
-    }) // consumer 구조
-    .catch(err => { }) // consumer 구조
+
+  useEffect(() => {
+    axios.get(`/data/SeoulCCTV.json`) // function 구조 - 파라미터 : URL, Data(데이터 없으므로 생략), 리턴 : then or catch
+      .then(res => {
+        setItems(res.data.DATA)
+      }) // consumer 구조
+      .catch(err => { }) // consumer 구조
+  }, [])
 
   return (
     <>
+      <HomeNav />
+
       <h1>게시판</h1>
 
       <form className="board_form">
@@ -25,11 +31,11 @@ const SeoulCCTV = () => {
                 <th>카메라명칭</th>
                 <th>설명</th>
               </tr>
-              {
-                items.map((item, endtime) => {
+              { // 동적으로 변하는 공간 {} 표시
+                items.map((item, i) => {
                   return (
-                    <tr key={endtime}>
-                      <td>{item.endtime}</td>
+                    <tr key={i}>
+                      <td>{++i}</td>
                       <td>{item.checktime}</td>
                       <td>{item.deviceid}</td>
                       <td>{item.devicename}</td>
