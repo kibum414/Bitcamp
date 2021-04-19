@@ -3,10 +3,10 @@ import 'article/style/ArticleList.css'
 import axios from 'axios'
 
 const SeoulCCTV = () => {
-  const [items, setItems] = useState({})
-  axios.get(`../data/SeoulCCTV.json`) // function 구조 (데이터 없으므로 생략)
+  const [items, setItems] = useState([])
+  axios.get(`/data/SeoulCCTV.json`) // function 구조 (데이터 없으므로 생략)
     .then(res => {
-      setItems(res.data)
+      setItems(res.data.DATA)
     }) // consumer 구조
     .catch(err => { }) // consumer 구조
 
@@ -26,14 +26,14 @@ const SeoulCCTV = () => {
                 <th>설명</th>
               </tr>
               {
-                items.map((item, i) => {
+                items.map((item, endtime) => {
                   return (
-                    <tr key={i}>
-                      <td>{item.i}</td>
+                    <tr key={endtime}>
+                      <td>{item.endtime}</td>
                       <td>{item.checktime}</td>
                       <td>{item.deviceid}</td>
-                      <td></td>
-                      <td></td>
+                      <td>{item.devicename}</td>
+                      <td>{item.description}</td>
                     </tr>
                   )
                 })
