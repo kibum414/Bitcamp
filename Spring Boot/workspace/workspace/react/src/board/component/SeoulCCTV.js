@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import 'article/style/ArticleList.css'
 import axios from 'axios'
 import HomeNav from 'common/component/HomeNav'
+import HomeFooter from 'common/component/HomeFooter'
 
 const SeoulCCTV = () => {
   const [items, setItems] = useState([])
@@ -50,6 +51,8 @@ const SeoulCCTV = () => {
           </div>
         </div>
       </form>
+
+      <HomeFooter />
     </>
   )
 }

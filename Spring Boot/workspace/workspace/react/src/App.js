@@ -14,7 +14,7 @@ const App = () => {
       <Route exact path='/user/login' component={LoginForm}></Route>
       <Route exact path='/user/user-detail' component={UserDetail}></Route>
       <Route exact path='/board/news' component={News}></Route>
-      <Route exact path='/board/seoul-cctv' component={SeoulCCTV}></Route>
+      <Route exace path='/board/seoul-cctv' component={SeoulCCTV}></Route>
       <Route exact path='/board/counter' component={Counter}></Route>
       <Route exact path='/board/redux-counter' component={ReduxCounter}></Route>
       <Route exact path='/article/article-list' component={ArticleList}></Route>
