@@ -6,19 +6,21 @@ import HomeNav from 'common/component/HomeNav'
 const SeoulCCTV = () => {
   const [items, setItems] = useState([])
 
-  useEffect(() => {
+  const cctvList = () => {
     axios.get(`/data/SeoulCCTV.json`) // function 구조 - 파라미터 : URL, Data(데이터 없으므로 생략), 리턴 : then or catch
       .then(res => {
         setItems(res.data.DATA)
       }) // consumer 구조
       .catch(err => { }) // consumer 구조
-  }, [])
+  }
+
+  useEffect(() => { cctvList() }, [])
 
   return (
     <>
       <HomeNav />
 
-      <h1>게시판</h1>
+      <h1>Seoul CCTV</h1>
 
       <form className="board_form">
         <div className="container">
