@@ -1,3 +1,4 @@
 export { default as News } from 'board/component/News'
 export { default as SeoulCCTV } from 'board/component/SeoulCCTV'
 export { default as Counter } from 'board/component/Counter'
+export { default as ReduxCounter } from 'board/component/ReduxCounter'
