@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ReduxCounter = ({ number, onIncrease, onDecrease }) => {
+const ReduxCounter = React.memo(({ number, onIncrease, onDecrease }) => {
 
   return (
     <>
@@ -11,7 +11,7 @@ const ReduxCounter = ({ number, onIncrease, onDecrease }) => {
           <button aria-label="+" onClick={ onIncrease }>
             +
           </button>
-          <span style={{ margin: "10px" }}>{ number }</span>
+          <span style={{ margin: "30%" }}>{ number }</span>
           <button aria-label="-" onClick={ onDecrease }>
             -
           </button>
@@ -19,6 +19,6 @@ const ReduxCounter = ({ number, onIncrease, onDecrease }) => {
       </div>
     </>
   )
-}
+})
 
 export default ReduxCounter
