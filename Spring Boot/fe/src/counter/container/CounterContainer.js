@@ -4,7 +4,7 @@ import { ReduxCounter } from 'counter/index'
 import { increase, decrease } from 'counter/reducer/Counter.reducer'
 
 const CounterContainer = () => {
-  const number = useSelector(state => state.counterReducer.number)
+  const number = useSelector(state => state.counteReducer.number)
   const dispatch = useDispatch()
   const onIncrease = useCallback(() => dispatch(increase()), [dispatch])
   const onDecrease = useCallback(() => dispatch(decrease()), [dispatch])

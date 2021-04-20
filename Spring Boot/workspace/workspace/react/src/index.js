@@ -1,15 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { Provider } from 'react-redux'
-import { createStore, combineReducers } from 'redux'
+import 'index.css';
+import App from 'App';
+import reportWebVitals from 'reportWebVitals';
+import { Provider } from 'react-redux';
+import { combineReducers, createStore } from 'redux';
+import counterReducer from 'counter/reducer/Counter.reducer'
 // import store from 'app/store'
 
 // 바닐라 리덕스
-const rootReducer = combineReducers({})
+const rootReducer = combineReducers({ counterReducer })
 const store = createStore(rootReducer)
 
 ReactDOM.render(
@@ -17,7 +18,7 @@ ReactDOM.render(
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </Provider >,
+  </Provider>,
   document.getElementById('root')
 );
 
