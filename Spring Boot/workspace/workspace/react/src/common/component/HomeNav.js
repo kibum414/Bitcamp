@@ -23,6 +23,8 @@ const HomeNav = () => {
               <li><a href="#">WHERE</a></li>
               <li><Link to={'/board/news'}>NEWS</Link></li>
               <li><Link to={'/board/seoul-cctv'}>SEOUL CCTV</Link></li>
+              <li><Link to="/counter/counter">Counter</Link></li>
+              <li><Link to="/counter/redux-counter">ReduxCounter</Link></li>
             </ul>
           </div>
         </div>
