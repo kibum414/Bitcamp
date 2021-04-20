@@ -9,15 +9,15 @@ import { createStore, combineReducers } from 'redux'
 // import store from 'app/store'
 
 // 바닐라 리덕스
-const rootReducer = combineReducers({ })
+const rootReducer = combineReducers({})
 const store = createStore(rootReducer)
 
 ReactDOM.render(
-  <BrowserRouter>
-    <Provider store={store}>
+  <Provider store={store}>
+    <BrowserRouter>
       <App />
-    </Provider>
-  </BrowserRouter>,
+    </BrowserRouter>
+  </Provider >,
   document.getElementById('root')
 );
 
