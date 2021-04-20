@@ -1,7 +1,7 @@
 import React from 'react'
 
 const ReduxCounter = React.memo(({ number, onIncrease, onDecrease }) => {
-
+// memo : 이전의 값 저장하기 위한 것 (number의 값)
   return (
     <>
       <h1>리덕스 카운터</h1>
