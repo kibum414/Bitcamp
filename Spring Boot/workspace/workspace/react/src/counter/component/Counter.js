@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
 
 const Counter = () => {
   const [count, setCount] = useState(0)

@@ -7,7 +7,6 @@ import reportWebVitals from 'reportWebVitals';
 import { Provider } from 'react-redux'
 import { combineReducers, createStore } from 'redux';
 import counterReducer from 'counter/reducer/Counter.reducer'
-
 // import store from 'app/store'
 
 // 바닐라 리덕스

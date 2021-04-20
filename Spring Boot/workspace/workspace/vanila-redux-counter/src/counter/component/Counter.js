@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 const Counter = () => {
   const [count, setCount] = useState(0)
 
-
   return (
     <>
       <h1>카운터</h1>
