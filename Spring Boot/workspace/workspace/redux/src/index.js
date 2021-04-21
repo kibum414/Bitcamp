@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { combineReducers, createStore } from 'redux';
-import counterReducer from './counter/reducer/Counter.reducer'
+import counterReducer from './counter/reducer/counter.reducer'
 
 const rootReducer = combineReducers({ counterReducer })
 const store = createStore(rootReducer)

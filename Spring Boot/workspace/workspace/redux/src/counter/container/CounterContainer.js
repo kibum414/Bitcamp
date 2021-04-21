@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { ReduxCounter } from '..'
-import { increase, decrease } from '../reducer/Counter.reducer'
+import { increase, decrease } from '../reducer/counter.reducer'
 
 const CounterContainer = () => {
   const number = useSelector(state => state.counterReducer.number)
