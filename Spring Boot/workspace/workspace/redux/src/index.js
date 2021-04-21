@@ -5,11 +5,14 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { combineReducers, createStore } from 'redux';
+import { createStore, combineReducers } from 'redux';
 import counterReducer from './counter/reducer/counter.reducer'
+import { configureStore } from '@reduxjs/toolkit';
+import rtkcounterReducer from './counter/reducer/counter.slice'
 
-const rootReducer = combineReducers({ counterReducer })
-const store = createStore(rootReducer) // 바닐라 리덕스
+const rootReducer = combineReducers({ counterReducer, rtkcounterReducer })
+// const store = createStore(rootReducer) : 바닐라 리덕스
+const store = configureStore({ reducer: rootReducer }) // RTK
 
 ReactDOM.render(
   <Provider store={store}>

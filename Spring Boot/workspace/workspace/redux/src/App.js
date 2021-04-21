@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { Route } from 'react-router-dom';
-import { Counter, CounterContainer } from './counter';
+import { Counter, CounterContainer, RTKCounterContainer } from './counter';
 
 function App() {
   return (
@@ -10,6 +10,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <Route exact path='/' component={Counter} />
         <Route exact path='/' component={CounterContainer} />
+        <Route exact path='/' component={RTKCounterContainer} />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
