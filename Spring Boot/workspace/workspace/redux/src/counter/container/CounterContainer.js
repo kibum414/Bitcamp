@@ -4,6 +4,7 @@ import { ReduxCounter } from '..'
 import { increase, decrease } from '../reducer/counter.reducer'
 
 const CounterContainer = () => {
+  // state = store
   const number = useSelector(state => state.counterReducer.number)
   const dispatch = useDispatch()
   const onIncrease = useCallback(() => dispatch(increase()), [dispatch])
