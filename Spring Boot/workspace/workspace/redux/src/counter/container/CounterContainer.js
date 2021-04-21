@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { ReduxCounter } from '..'
 import { increase, decrease } from '../reducer/counter.reducer'
 
