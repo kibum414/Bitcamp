@@ -1,6 +1,6 @@
 import React from 'react'
 
-const HomeContainerThird = () => {
+const ThirdContent = () => {
   
   return (
     <div className="container-fluid bg-3 text-center">
@@ -43,4 +43,4 @@ const HomeContainerThird = () => {
   )
 }
 
-export default HomeContainerThird
+export default ThirdContent

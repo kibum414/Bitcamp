@@ -1,30 +1,29 @@
 /* Basic Style */
-body {
+.todo-container {
+  display: block;
+  width: 400px;
+  margin: 100px auto 0;
   background: #fff;
   color: #333;
   font-family: Lato, sans-serif;
 }
-container {
-  display: block;
-  width: 400px;
-  margin: 100px auto 0;
-}
-.todo ul {
+.todo-container ul {
   margin: 0;
   padding: 0;
 }
-.todo li * {
+.todo-container li * {
   float: left;
 }
-.todo li, h3 {
+.todo-container li, 
+.todo-container h3 {
   clear:both;
   list-style:none;
 }
-.todo input, 
-.todo button {
+.todo-container input, 
+.todo-container button {
   outline: none;
 }
-.todo button {
+.todo-container button {
   background: none;
   border: 0px;
   color: #888;
@@ -34,12 +33,12 @@ container {
   font-family: Lato, sans-serif;
   cursor: pointer;
 }
-.todo button:hover {
+.todo-container button:hover {
   color: #333;
 }
 /* Heading */
-.todo h3,
-.todo label[for='new-task'] {
+.todo-container h3,
+.todo-container label[for='new-task'] {
   color: #333;
   font-weight: 700;
   font-size: 15px;
@@ -48,7 +47,7 @@ container {
   margin: 0;
   text-transform: uppercase;
 }
-.todo input[type="text"] {
+.todo-container input[type="text"] {
   margin: 0;
   font-size: 18px;
   line-height: 18px;
@@ -60,44 +59,44 @@ container {
   font-family: Lato, sans-serif;
   color: #888;
 }
-.todo input[type="text"]:focus {
+.todo-container input[type="text"]:focus {
   color: #333;
 }
 
 /* New Task */
-.todo label[for='new-task'] {
+.todo-container label[for='new-task'] {
   display: block;
   margin: 0 0 20px;
 }
-.todo input#new-task {
+.todo-container input#new-task {
   float: left;
   width: 318px;
 }
-.todo p > button:hover {
+.todo-container p > button:hover {
   color: #0FC57C;
 }
 
 /* Task list */
-.todo li {
+.todo-container li {
   overflow: hidden;
   padding: 20px 0;
   border-bottom: 1px solid #eee;
 }
-.todo li > input[type="checkbox"] {
+.todo-container li > input[type="checkbox"] {
   margin: 0 10px;
   position: relative;
   top: 15px;
 }
-.todo li > label {
+.todo-container li > label {
   font-size: 18px;
   line-height: 40px;
   width: 237px;
   padding: 0 0 0 11px;
 }
-.todo li > input[type="text"] {
+.todo-container li > input[type="text"] {
   width: 226px;
 }
-.todo li > .delete:hover {
+.todo-container li > .delete:hover {
   color: #CF2323;
 }
 
@@ -108,14 +107,14 @@ container {
 }
 
 /* Edit Task */
-.todo ul li input[type=text] {
+.todo-container ul li input[type=text] {
   display:none;
 }
 
-.todo ul li.editMode input[type=text] {
+.todo-container ul li.editMode input[type=text] {
   display:block;
 }
 
-.todo ul li.editMode label {
+.todo-container ul li.editMode label {
   display:none;
 }

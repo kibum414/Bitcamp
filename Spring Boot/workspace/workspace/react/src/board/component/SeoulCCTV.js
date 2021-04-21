@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import 'article/style/ArticleList.css'
 import axios from 'axios'
-import HomeNav from 'common/component/HomeNav'
-import HomeFooter from 'common/component/HomeFooter'
+import HomeNav from 'common/component/Header'
+import HomeFooter from 'common/component/Footer'
 
 const SeoulCCTV = () => {
   const [items, setItems] = useState([])

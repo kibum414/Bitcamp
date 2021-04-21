@@ -1,7 +1,7 @@
 import React from 'react'
-import 'user/style/LoginForm.css'
+import 'user/style/Login.css'
 
-const LoginForm = () => {
+const Login = () => {
 
   return (
     <>
@@ -29,4 +29,4 @@ const LoginForm = () => {
   )
 }
 
-export default LoginForm
+export default Login

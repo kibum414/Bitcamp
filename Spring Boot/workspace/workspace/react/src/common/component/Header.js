@@ -1,8 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import News from 'board/component/News'
 
-const HomeNav = () => {
+const Header = () => {
 
   return (
     <>
@@ -22,6 +21,16 @@ const HomeNav = () => {
             <Link to={'#'} className="navbar-brand">
               Me
             </Link>
+            <div className="collapse navbar-collapse" id="myNavbar">
+            <ul className="nav navbar-nav navbar-right">
+              <li>
+                <Link to={'/login'}>LOGIN</Link>
+              </li>
+              <li>
+                <Link to={'/signup'}>SIGN UP</Link>
+              </li>
+              </ul>
+              </div>
           </div>
           <div className="collapse navbar-collapse" id="myNavbar">
             <ul className="nav navbar-nav navbar-right">
@@ -41,10 +50,7 @@ const HomeNav = () => {
                 <Link to={'/board/seoul-cctv'}>SEOUL CCTV</Link>
               </li>
               <li>
-                <Link to="/counter/counter">COUNTER</Link>
-              </li>
-              <li>
-                <Link to='/counter/counter-container'>COUNTER CONTAINER</Link>
+                <Link to={'/todo'}>TODO</Link>
               </li>
             </ul>
           </div>
@@ -54,4 +60,4 @@ const HomeNav = () => {
   )
 }
 
-export default HomeNav
+export default Header

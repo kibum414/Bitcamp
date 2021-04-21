@@ -1,7 +1,7 @@
 import React from 'react'
-import 'user/style/SignUpForm.css'
+import 'user/style/SignUp.css'
 
-const SignUpForm = () => {
+const SignUp = () => {
 
   return (
     <>
@@ -51,4 +51,4 @@ const SignUpForm = () => {
   )
 }
 
-export default SignUpForm
+export default SignUp
