@@ -9,7 +9,7 @@ import { combineReducers, createStore } from 'redux';
 import counterReducer from './counter/reducer/counter.reducer'
 
 const rootReducer = combineReducers({ counterReducer })
-const store = createStore(rootReducer)
+const store = createStore(rootReducer) // 바닐라 리덕스
 
 ReactDOM.render(
   <Provider store={store}>
