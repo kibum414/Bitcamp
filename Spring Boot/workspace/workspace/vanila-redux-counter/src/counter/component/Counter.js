@@ -5,7 +5,7 @@ const Counter = () => {
 
   return (
     <>
-      <h1>카운터</h1>
+      <h1>Counter</h1>
 
       <div>
         <div>

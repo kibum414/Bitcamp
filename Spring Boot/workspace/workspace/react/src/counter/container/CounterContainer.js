@@ -1,9 +1,9 @@
-import HomeFooter from 'common/component/HomeFooter'
-import HomeNav from 'common/component/HomeNav'
-import { ReduxCounter } from 'counter'
-import { increase, decrease } from 'counter/reducer/Counter.reducer'
 import React, { useCallback } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import { increase, decrease } from 'counter/reducer/Counter.reducer'
+import HomeNav from 'common/component/HomeNav'
+import { ReduxCounter } from 'counter'
+import HomeFooter from 'common/component/HomeFooter'
 
 const CounterContainer = () => {
   const number = useSelector(state => state.counterReducer.number)
@@ -14,7 +14,7 @@ const CounterContainer = () => {
   return (
     <>
       <HomeNav />
-      <ReduxCounter number={ number } onIncrease={ onIncrease } onDecrease={ onDecrease } />
+      <ReduxCounter number={number} onIncrease={onIncrease} onDecrease={onDecrease} />
       <HomeFooter />
     </>
   )

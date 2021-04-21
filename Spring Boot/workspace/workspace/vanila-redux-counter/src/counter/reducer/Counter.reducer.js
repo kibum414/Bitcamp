@@ -1,4 +1,6 @@
 // store : 객체
+
+// createReducer -> handleActions
 import { createAction, handleActions } from 'redux-actions'
 
 // action : 변화
@@ -13,8 +15,8 @@ const initialState = { number: 0 } // 키 : 값 => 키는 바뀌지 않음, 값�
 
 // reducer : 변화
 const counterReducer = handleActions({ // 내부 리듀서는 아직 작동하지 않고 있음. 이벤트가 주어지기 전에는 선언만 되어 있음
-  [INCREASE] : (state, action) => ({ number : state.number + 1 }), // state.number : 전역 state
-  [DECREASE] : (state, action) => ({ number : state.number - 1 }) // [] : store, IN,DE : reducer
+  [INCREASE] : (state, action) => ({ number : state.number + action.payload }), // state.number : 전역 state, action : 그냥 액션
+  [DECREASE] : (state, action) => ({ number : state.number - action.payload }) // [] : store, IN,DE : reducer
 }, initialState) // initialState 에 바뀌어진 값이 저장
 // -> 데코레이션 패턴 (state: 빵, INCREASE, DECREASE: 데코 선택)
 
