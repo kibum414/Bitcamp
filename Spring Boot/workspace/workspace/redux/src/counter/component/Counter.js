@@ -10,7 +10,9 @@ const Counter = () => {
       <button aria-label="-" onClick={() => { setCount(count - 1) }}>
         -
       </button>
-      <span style={{margin: "10px"}}>{count}</span>
+      <span style={{ margin: "10px" }}>
+        { count }
+      </span>
       <button aria-label="+" onClick={() => { setCount(count + 1) }}>
         +
       </button>
