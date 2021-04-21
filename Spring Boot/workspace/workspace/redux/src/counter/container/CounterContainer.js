@@ -12,9 +12,9 @@ const CounterContainer = () => {
   return (
     <>
       <ReduxCounter
-        number={number}
-        onIncrease={onIncrease}
-        onDecrease={onDecrease}
+        number={ number }
+        onIncrease={ onIncrease }
+        onDecrease={ onDecrease }
       />
     </>
   )
