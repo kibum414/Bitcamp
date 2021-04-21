@@ -1,11 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
+import { Route } from 'react-router-dom';
+import { Counter } from './counter';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <Route exact path='/' component={Counter} />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
