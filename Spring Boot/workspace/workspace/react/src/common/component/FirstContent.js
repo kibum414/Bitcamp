@@ -3,7 +3,7 @@ import React from 'react'
 const FirstContent = () => {
 
   return (
-    <div className="container-fluid bg-1 text-center">
+    <div className="container-fluid bg-1 text-center home">
       <h3 className="margin">Who Am I?</h3>
       <img
         src="https://www.w3schools.com/bootstrap/bird.jpg"

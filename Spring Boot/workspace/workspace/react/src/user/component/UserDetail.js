@@ -7,7 +7,7 @@ const UserDetail = () => {
     <>
       <h1>회원 정보</h1>
 
-      <form className="user_form">
+      <form className="user-form user-detail-form">
         <div className="container">
           <div className="content">
             <table>

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import 'article/style/ArticleList.css'
 import axios from 'axios'
-import HomeNav from 'common/component/Header'
-import HomeFooter from 'common/component/Footer'
+import Header from 'common/component/Header'
+import Footer from 'common/component/Footer'
 
 const SeoulCCTV = () => {
   const [items, setItems] = useState([])
@@ -18,12 +18,12 @@ const SeoulCCTV = () => {
   useEffect(() => { cctvList() }, [])
 
   return (
-    <>
-      <HomeNav />
+    <div className="article">
+      <Header />
 
       <h1>Seoul CCTV</h1>
 
-      <form className="board_form">
+      <form className="article-form article-list-form">
         <div className="container">
           <div className="content">
             <table>
@@ -52,8 +52,8 @@ const SeoulCCTV = () => {
         </div>
       </form>
 
-      <HomeFooter />
-    </>
+      <Footer />
+    </div>
   )
 }
 

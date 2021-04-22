@@ -6,13 +6,13 @@ import 'common/style/Common.css'
 const Home = () => {
 
   return (
-    <div className="home">
+    <>
       <Header />
       <FirstContent />
       <SecondContent />
       <ThirdContent />
       <Footer />
-    </div>
+    </>
   )
 }
 

@@ -1,13 +1,13 @@
 import React from 'react'
-import 'article/style/ArticleWrite.css'
+import 'article/style/Article.css'
 
 const ArticleWrite = () => {
 
   return (
-    <>
+    <div className="article">
       <h1>글쓰기</h1>
 
-      <form className="write_form">
+      <form className="article-form">
         <div className="container">
           <div className="content">
             <table>
@@ -37,7 +37,7 @@ const ArticleWrite = () => {
           </div>
         </div>
       </form>
-    </>
+    </div>
   )
 }
 

@@ -3,7 +3,7 @@ import React from 'react'
 const ThirdContent = () => {
   
   return (
-    <div className="container-fluid bg-3 text-center">
+    <div className="container-fluid bg-3 text-center home">
       <h3 className="margin">Where To Find Me?</h3>
       <br />
       <div className="row">

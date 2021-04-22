@@ -1,13 +1,13 @@
 import React from 'react'
-import 'article/style/ArticleDetail.css'
+import 'article/style/Article.css'
 
 const ArticleDetail = () => {
 
   return (
-    <>
+    <div className="article">
       <h1>게시판</h1>
 
-      <form className="detail_form">
+      <form className="article-form">
         <div className="container">
           <div className="content">
             <table>
@@ -41,7 +41,7 @@ const ArticleDetail = () => {
           </div>
         </div>
       </form>
-    </>
+    </div>
   )
 }
 

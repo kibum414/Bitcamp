@@ -1,13 +1,13 @@
 import React from 'react'
-import 'article/style/ArticleUpdate.css'
+import 'article/style/Article.css'
 
 const ArticleUpdate = () => {
 
   return (
-    <>
+    <div className="article">
       <h1>글 수정</h1>
 
-      <form className="update_form">
+      <form className="article-form">
         <div className="container">
           <div className="content">
             <table>
@@ -37,7 +37,7 @@ const ArticleUpdate = () => {
           </div>
         </div>
       </form>
-    </>
+    </div>
   )
 }
 

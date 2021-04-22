@@ -3,7 +3,7 @@ import React from 'react'
 const SecondContent = () => {
 
   return (
-    <div className="container-fluid bg-2 text-center">
+    <div className="container-fluid bg-2 text-center home">
       <h3 className="margin">What Am I?</h3>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit,

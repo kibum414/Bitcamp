@@ -5,7 +5,7 @@ const Header = () => {
 
   return (
     <>
-      <nav className="navbar navbar-default">
+      <nav className="navbar navbar-default home">
         <div className="container">
           <div className="navbar-header">
             <button
@@ -18,10 +18,11 @@ const Header = () => {
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
             </button>
-            <Link to={'#'} className="navbar-brand">
+            <Link to={'/'} className="navbar-brand">
               Me
             </Link>
-            <div className="collapse navbar-collapse" id="myNavbar">
+          </div>
+          <div className="collapse navbar-collapse" id="myNavbar">
             <ul className="nav navbar-nav navbar-right">
               <li>
                 <Link to={'/login'}>LOGIN</Link>
@@ -29,20 +30,10 @@ const Header = () => {
               <li>
                 <Link to={'/signup'}>SIGN UP</Link>
               </li>
-              </ul>
-              </div>
+            </ul>
           </div>
           <div className="collapse navbar-collapse" id="myNavbar">
             <ul className="nav navbar-nav navbar-right">
-              <li>
-                <Link to={'#'}>WHO</Link>
-              </li>
-              <li>
-                <Link to={'#'}>WHAT</Link>
-              </li>
-              <li>
-                <Link to={'#'}>WHERE</Link>
-              </li>
               <li>
                 <Link to={'/board/news'}>NEWS</Link>
               </li>

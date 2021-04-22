@@ -1,5 +1,5 @@
 import React from 'react'
-import 'user/style/Login.css'
+import 'user/style/User.css'
 
 const Login = () => {
 
@@ -7,7 +7,7 @@ const Login = () => {
     <>
       <h1>로그인</h1>
 
-      <form className="login_form">
+      <form className="user-form">
         <div className="container">
           <div className="content">
             <label htmlFor="username"><b>아이디</b></label>

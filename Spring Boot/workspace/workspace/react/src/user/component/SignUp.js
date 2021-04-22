@@ -1,5 +1,5 @@
 import React from 'react'
-import 'user/style/SignUp.css'
+import 'user/style/User.css'
 
 const SignUp = () => {
 
@@ -7,7 +7,7 @@ const SignUp = () => {
     <>
       <h1>회원가입</h1>
       
-      <form className="join_form">
+      <form className="user-form">
         <div className="container">
           <div className="content">
             <label htmlFor="username"><b>아이디</b></label>
