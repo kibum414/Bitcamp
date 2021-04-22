@@ -1,8 +1,11 @@
 /* Basic Style */
+.todo {
+  background-color: #ffffff;
+}
 .todo-container {
   display: block;
   width: 400px;
-  margin: 100px auto 0;
+  margin: 0 auto 60px;
   background: #fff;
   color: #333;
   font-family: Lato, sans-serif;
@@ -101,7 +104,7 @@
 }
 
 /* Completed */
-#completed-tasks label {
+.todo-container #completed-tasks label {
   text-decoration: line-through;
   color: #888;
 }
