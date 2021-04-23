@@ -1,49 +1,7 @@
-import React, { useState } from 'react'
-import axios from 'axios'
+import React from 'react'
 import 'user/style/User.css'
 
-const SignUp = ({ history }) => {
-  const [userInfo, setUserInfo] = useState({})
-
-  const { username, password, name, birthday, gender, email, phone } = userInfo
-
-  const inputChange = e => {
-    const { name, value } = e.target
-    console.log(userInfo)
-
-    setUserInfo({
-      ...userInfo,
-      [name]: value
-    })
-  }
-
-  const userRegister = e => {
-    e.preventDefault()
-
-    alert(`회원가입`)
-
-    axios({
-      method: 'post',
-      url: 'http://localhost:8080/users',
-      data: {
-        username,
-        password,
-        name,
-        birthday,
-        gender,
-        email,
-        phone,
-        regdate: new Date()
-      }
-    })
-      .then(res => {
-        console.log(`res: ${JSON.stringify(res.data)}`)
-        history.push('login')
-      })
-      .catch(err => {
-        console.log(`${err}`)
-      })
-  }
+const SignUp = () => {
 
   return (
     <>
