@@ -1,16 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { DeleteTodo } from 'todo'
 
-const Todo = ({ todo }) => {
+const Todo = ({ todo, deleteTodo, toggleTodo }) => {
+  const dispatch = useDispatch()
+
+  const [edit, setEdit] = useState(false)
+
+  const editClick = () => {
+    setEdit(!edit)
+  }
 
   return (
     <>
-      <ul id="incomplete-tasks">
-        <li className="editMode">
-          <input type="checkbox" />
+      <ul id={(todo.done) ? "completed-tasks" : "incomplete-tasks"}>
+        {/* <li className="editMode"> */}
+        <li className={(edit) ? "editMode" : ""}>
+          <input
+            type="checkbox"
+            onChange={() => dispatch(toggleTodo(todo))}
+          />
           <label>{todo.text}</label>
           <input type="text" value={todo.text} />
-          <button className="edit" >Edit</button>
-          <button className="delete" >Delete</button>
+          <button className="edit" onClick={editClick}>Edit</button>
+          <DeleteTodo todo={todo} deleteTodo={deleteTodo} />
         </li>
       </ul>
     </>

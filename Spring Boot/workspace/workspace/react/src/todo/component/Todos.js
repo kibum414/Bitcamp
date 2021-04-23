@@ -1,14 +1,44 @@
 import React from 'react'
-import { Todo } from 'todo'
+import { useDispatch } from 'react-redux'
+import { Todo, DoneTodo } from 'todo'
 
-const Todos = ({ todos }) => {
+const Todos = ({ todos, doneTodos, deleteTodo, deleteAllTodo, toggleTodo }) => {
+  const dispatch = useDispatch()
 
   return (
     <>
       <h3>Todo</h3>
+      <button
+        className="delete-all-btn"
+        onClick={() => dispatch(deleteAllTodo(todos))}
+      >
+        Delete All
+      </button>
       {
         todos.map(todo => (
-          <Todo key={todo.id} todo={todo} />
+          <Todo
+            key={todo.id}
+            todo={todo}
+            deleteTodo={deleteTodo}
+            toggleTodo={toggleTodo}
+          />
+        ))
+      }
+      <h3>Completed</h3>
+      <button
+        className="delete-all-btn"
+        onClick={() => dispatch(deleteAllTodo(doneTodos))}
+      >
+        Delete All
+      </button>
+      {
+        doneTodos.map(doneTodo => (
+          <DoneTodo
+            key={doneTodo.id}
+            doneTodo={doneTodo}
+            deleteTodo={deleteTodo}
+            toggleTodo={toggleTodo}
+          />
         ))
       }
         

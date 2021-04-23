@@ -3,68 +3,30 @@ import React from 'react'
 import { useSelector } from 'react-redux';
 import { AddTodo, DoneTodo, Todos } from 'todo';
 import 'todo/style/Todo.css'
-import { addTodo } from 'todo/reducer/todo.reducer'
+import { addTodo, deleteTodo, deleteAllTodo, toggleTodo } from 'todo/reducer/todo.reducer'
 
 const TodoApp = () => {
-
-  //Problem: user interaction doesn't provide desired results
-  //Solution: add interactivity so the user can manage daily tasks.
-
-  var taskInput = document.getElementById("new-task"); // new-task
-  var addButton = document.getElementsByTagName("button")[0];//first button
-  var incompleteTasksHolder = document.getElementById("incomplete-tasks"); //incomplete-tasks
-  var completedTasksHolder = document.getElementById("completed-tasks"); //completed-tasks
-
-  //New Task List item
-
-  const createNewTaskElement = function (taskString) {
-    // create List Item
-    const listItem = document.createElement("li");
-    // input checkbox
-    const checkBox = document.createElement("input");
-    // label
-    const label = document.createElement("label");
-    // input (text)
-    const editInput = document.createElement("input");
-    // button.edit
-    const editButton = document.createElement("button");
-    // button.delete
-    const deleteButton = document.createElement("button");
-
-    //Each element needs modified 
-
-    checkBox.type = "checkBox";
-    editInput.type = "text";
-
-    editButton.innerText = "Edit";
-    editButton.className = "edit";
-    deleteButton.innerText = "Delete";
-    deleteButton.className = "delete";
-
-    label.innerText = taskString;
-
-    // Each element needs appending
-    listItem.appendChild(checkBox);
-    listItem.appendChild(label);
-    listItem.appendChild(editInput);
-    listItem.appendChild(editButton);
-    listItem.appendChild(deleteButton);
-
-    return listItem;
-  }
-
-  const todos = useSelector(state => state.todoReducer)
+  const todos = useSelector(state => state.todoSlice.todoList)
+  const doneTodos = useSelector(state => state.todoSlice.doneTodoList)
   
   return (
-    <div className="todo">
+    <>
       <Header />
-      <div className="todo-container">
-        <AddTodo addTodo={addTodo} />
-        <Todos todos={todos} />
-        <DoneTodo />
+      <div className="todo-form">
+        <h1>Todo</h1>
+        <div className="todo-container">
+          <AddTodo addTodo={addTodo} />
+          <Todos
+            todos={todos}
+            doneTodos={doneTodos}
+            deleteTodo={deleteTodo}
+            deleteAllTodo={deleteAllTodo}
+            toggleTodo={toggleTodo}
+          />
+        </div>
       </div>
       <Footer />
-    </div>
+    </>
   )
 }
 
