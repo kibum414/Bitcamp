@@ -1,7 +1,7 @@
 import { Header, Footer } from 'common';
 import React from 'react'
 import { useSelector } from 'react-redux';
-import { AddTodo, DoneTodo, Todos } from 'todo';
+import { AddTodo, Todos } from 'todo';
 import 'todo/style/Todo.css'
 import { addTodo, deleteTodo, deleteAllTodo, toggleTodo } from 'todo/reducer/todo.reducer'
 
