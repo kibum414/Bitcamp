@@ -47,7 +47,7 @@ const SignUpForm = ({ history }) => {
   }
 
   return (
-    <form className="join_form" onSubmit={userRegister}>
+    <form className="join-form" onSubmit={userRegister}>
       <div className="container">
         <div className="content">
           <label htmlFor="username"><b>아이디</b></label>

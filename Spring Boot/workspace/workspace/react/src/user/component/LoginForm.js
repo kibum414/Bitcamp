@@ -42,7 +42,7 @@ const LoginForm = () => {
   }
 
   return (
-    <form className="login_form" onSubmit={userLogin}>
+    <form className="login-form" onSubmit={userLogin}>
       <div className="container">
         <div className="content">
           <label htmlFor="username"><b>아이디</b></label>
