@@ -1,7 +1,46 @@
-import React from 'react'
+import React, { useState } from 'react'
+import axios from 'axios'
 import 'user/style/User.css'
 
 const Login = () => {
+
+  const [inputs, setInputs] = useState({})
+
+  const { username, password } = inputs
+
+  const userLogin = e => {
+    e.preventDefault()
+
+    axios({
+      method: "post",
+      url: 'http://localhost:8080/users/login',
+      data: {
+        username,
+        password
+      }
+    })
+      .then(res => {
+        console.log(`res: ${JSON.stringify(res)}`)
+        setInputs(res.data)
+
+        alert('로그인 성공 !')
+      })
+      .catch(err => {
+        console.log(`${err}`)
+
+        alert('아이디와 비밀번호를 확인하세요.')
+      })
+  }
+
+  const inputChange = e => {
+    const { name, value } = e.target
+    console.log(inputs)
+
+    setInputs({
+      ...inputs,
+      [name]: value
+    })
+  }
 
   return (
     <>
