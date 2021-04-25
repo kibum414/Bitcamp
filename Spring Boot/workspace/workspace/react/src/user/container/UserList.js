@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import UserListForm from '../component/UserListForm';
-import '../css/UserList.css';
+import UserListForm from 'user/component/UserListForm';
 
 const UserList = () => {
   const [list, setList] = useState([])

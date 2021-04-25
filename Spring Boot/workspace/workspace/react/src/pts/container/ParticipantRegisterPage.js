@@ -1,4 +1,4 @@
-import '../css/Participant.css'
+import '../style/Participant.css'
 import ParticipantForm from '../component/ParticipantRegisterForm'
 
 const Participant = () => {

@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import '../css/Participant.css'
+import '../style/Participant.css'
 
 const ParticipantForm = () => {
 
@@ -69,7 +69,7 @@ const ParticipantForm = () => {
 
       <div className="container">
         <button type="submit" className="participatebtn">등록</button>
-        <Link to="/participants/list">
+        <Link to="/participants">
           <button className="cancelbtn">취소</button>
         </Link>
       </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import '../css/List.css'
+import '../style/List.css'
 
 const ParticipantList = ({ list, indexOfFirstPost }) => {
 

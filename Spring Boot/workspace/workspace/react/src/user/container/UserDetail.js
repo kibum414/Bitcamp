@@ -1,10 +1,8 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react'
+import 'user/style/UserDetail.css';
 
-
-import '../css/UserDetail.css';
-
-const UserDetail = () => {
+const UserDetail = (props) => {
   const [detailInfo, setDetailInfo] = useState({})
 
   const getDetailInfo = () => {

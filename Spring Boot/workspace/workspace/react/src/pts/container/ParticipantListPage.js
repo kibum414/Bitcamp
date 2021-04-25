@@ -3,7 +3,7 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 import List from '../component/ParticipantList'
 import Pagination from '../component/Pagination'
-import '../css/List.css'
+import '../style/List.css'
 
 const ParticipantList = () => {
 
