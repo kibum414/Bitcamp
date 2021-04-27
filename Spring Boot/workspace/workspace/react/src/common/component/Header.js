@@ -43,6 +43,9 @@ const Header = () => {
               <li>
                 <Link to={'/todo'}>TODO</Link>
               </li>
+              <li>
+                <Link to={'/participants'}>PARTICIPANT</Link>
+              </li>
             </ul>
           </div>
         </div>

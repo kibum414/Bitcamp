@@ -1,5 +1,5 @@
 import React from 'react'
-import '../style/List.css'
+import 'pts/style/ParticipantList.css'
 
 const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
   const pageNum = []

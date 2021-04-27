@@ -1,56 +1,51 @@
-import React, { useState, useEffect, useCallback } from 'react'
 import axios from 'axios'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import 'pts/style/Participant.css'
 
-const ParticipantModify = (props) => {
-  const [detail, setDetail] = useState({})
-  
-  const { name, gender, birthday, phoneNumber, email } = detail
+const ParticipantRegister = () => {
 
-  const getDetail = () => {
-    axios.get(`http://localhost:8080/participants/${props.match.params.id}`)
-      .then(res => {
-        console.log(res)
-        setDetail(res.data)
-      })
-      .catch(err => {
-        console.log(err)
-      })
-  }
+  const [inputs, setInputs] = useState({})
 
-  useEffect(() => getDetail(), [])
-
-  const participantModify = (e) => {
-    e.preventDefault()
-
-    axios.put(`http://localhost:8080/participants/${props.match.params.id}`, {
-      name,
-      gender,
-      birthday,
-      phoneNumber,
-      email
-    })
-      .then(res => {
-        alert(`수정 !`)
-        console.log(res)
-        props.history.push(`/participants/detail/${props.match.params.id}`)
-      })
-  }
+  const { name, gender, birthday, phoneNumber, email } = inputs
 
   const inputChange = e => {
     const { name, value } = e.target
-    
-    setDetail({
-      ...detail,
+    console.log(inputs)
+
+    setInputs({
+      ...inputs,
       [name]: value
     })
   }
 
+  const participantRegister = (e) => {
+    e.preventDefault()
+
+    alert('등록 !')
+
+    axios.post(`http://localhost:8080/participants`, {
+      name,
+      gender,
+      birthday,
+      phoneNumber,
+      email,
+      regdate: new Date()
+    })
+      .then(res => {
+        console.log(`res : ${JSON.stringify(res.data)}`)
+        window.location = `/participants/list`
+      })
+      .catch(err => {
+        console.log(`err : ${err}`)
+      })
+  }
+
   return (
     <>
-      <h1>캠페인 참가 정보 수정</h1>
+      <h1>캠페인 참가 등록</h1>
       
-      <form className="participant-form" onSubmit={participantModify}>
+      <form className="participant-form" onSubmit={participantRegister}>
         <div className="container">
           <div className="content">
             <label htmlFor="name"><b>이름</b></label>
@@ -74,7 +69,7 @@ const ParticipantModify = (props) => {
           </div>
 
           <div className="btn_area">
-            <button type="submit" className="modify_btn"><b>수정하기</b></button>
+            <button type="submit" className="register_btn"><b>등록하기</b></button>
             <Link to="/participants">
               <button type="button" className="cancel_btn"><b>돌아가기</b></button>
             </Link>
@@ -85,4 +80,4 @@ const ParticipantModify = (props) => {
   )
 }
 
-export default ParticipantModify
+export default ParticipantRegister

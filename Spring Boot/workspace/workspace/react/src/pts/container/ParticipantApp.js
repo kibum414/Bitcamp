@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import List from '../component/ParticipantList'
-import Pagination from '../component/Pagination'
-import '../style/List.css'
+import ParticipantList from 'pts/component/ParticipantList'
+import Pagination from 'pts/component/Pagination'
+import 'pts/style/Participant.css'
 
-const ParticipantList = () => {
+const ParticipantApp = () => {
 
   const [list, setList] = useState([])
 
@@ -36,10 +36,10 @@ const ParticipantList = () => {
   }, [])
 
   return (
-    <>
+    <div className="participant">
       <h3>참가자 리스트</h3>
 
-      <List list={currentPosts} indexOfFirstPost={indexOfFirstPost} />
+      <ParticipantList list={currentPosts} indexOfFirstPost={indexOfFirstPost} />
 
       <Pagination postsPerPage={postsPerPage} totalPosts={list.length} paginate={paginate} />
     
@@ -52,8 +52,8 @@ const ParticipantList = () => {
           <button>등록</button>
         </Link>
       </div>
-    </>
+    </div>
   )
 }
 
-export default ParticipantList
+export default ParticipantApp

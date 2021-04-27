@@ -84,7 +84,7 @@ const SignUp = ({ history }) => {
           </div>
 
           <div className="btn_area">
-            <button type="submit" className="signup_btn"><b>가입하기</b></button>
+            <button type="submit" className="signup_btn">가입하기</button>
             
               <button type="button" className="cancel_btn"><b>돌아가기</b></button>
             

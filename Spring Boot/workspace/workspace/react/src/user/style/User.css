@@ -32,7 +32,8 @@
   width: 100%;
   height: 50px;
   opacity: 0.9;
-  font-size: large;
+  font-size: 18px;
+  font-weight: 700;
 }
 
 .user-form button:hover {

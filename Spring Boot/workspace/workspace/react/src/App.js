@@ -2,9 +2,9 @@ import { Route } from 'react-router-dom';
 import { Home } from 'common/index'
 import { SignUp, Login, UserDetail, UserList, UserEdit } from 'user/index'
 import { News, SeoulCCTV } from 'board/index'
-import { ArticleDetail, ArticleList, ArticleUpdate, ArticleWrite } from 'article/index'
+import { ArticleList, ArticleWrite, ArticleDetail, ArticleUpdate } from 'article/index'
 import { TodoApp } from 'todo/index'
-import { ParticipantListPage, ParticipantRegisterPage } from 'pts';
+import { ParticipantApp, ParticipantRegister, ParticipantDetail, ParticipantModify } from 'pts/index';
 
 const App = () => {
   return (
@@ -25,8 +25,10 @@ const App = () => {
       <Route exact path='/article/detail' component={ArticleDetail} />
       <Route exact path='/article/update' component={ArticleUpdate} />
 
-      <Route exact path='/participants' component={ParticipantListPage} />
-      <Route exact path='/participants/register' component={ParticipantRegisterPage} />
+      <Route exact path='/participants' component={ParticipantApp} />
+      <Route exact path='/participants/register' component={ParticipantRegister} />
+      <Route exact path='/participants/detail' component={ParticipantDetail} />
+      <Route exact path='/participants/modify' component={ParticipantModify} />
     </div>
   );
 }
