@@ -41,6 +41,9 @@ const Header = () => {
                 <Link to={'/board/seoul-cctv'}>SEOUL CCTV</Link>
               </li>
               <li>
+                <Link to={'/article'}>ARTICLE</Link>
+              </li>
+              <li>
                 <Link to={'/todo'}>TODO</Link>
               </li>
               <li>

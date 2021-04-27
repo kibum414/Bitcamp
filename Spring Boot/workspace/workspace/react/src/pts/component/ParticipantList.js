@@ -1,34 +1,37 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import 'pts/style/ParticipantList.css'
 
 const ParticipantList = ({ list, indexOfFirstPost }) => {
 
   return (
     <>
-      <table className="table table-hover">
-        <thead>
-          <tr>
-            <th className="postNum">번호</th>
-            <th>이름</th>
-            <th>신청일</th>
-          </tr>
-        </thead>
-        <tbody>
-          {
-            list.map((participant) =>
-              <tr key={participant.participantNo}>
-                <td className="postNum">{++indexOfFirstPost}</td>
-                <td>
-                  <Link to={`/participants/detail/${participant.participantNo}`}>
-                    {participant.name}
-                  </Link>
-                </td>
-                <td>{participant.regdate}</td>
-              </tr>
-            )
-          }
-        </tbody>
+      <table>
+        <tr>
+          <th>번호</th>
+          <th className="subject-th">제목</th>
+          <th>신청자</th>
+          <th>신청일</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td className="subject-td">제목</td>
+          <td>신청자</td>
+          <td>2021-04-30</td>
+        </tr>
+        {
+          list.map((participant) =>
+            <tr key={participant.participantNo}>
+              <td>{++indexOfFirstPost}</td>
+              <td className="subject-td">캠페인 제목</td>
+              <td>
+                <Link to={`/participants/detail/${participant.participantNo}`}>
+                  {participant.name}
+                </Link>
+              </td>
+              <td>{participant.regdate}</td>
+            </tr>
+          ) 
+        }
       </table>
     </>
   )

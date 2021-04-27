@@ -50,7 +50,7 @@ const SignUp = ({ history }) => {
   return (
     <>
       <h1>회원가입</h1>
-      
+
       <form className="user-form" onSubmit={userRegister}>
         <div className="container">
           <div className="content">
@@ -85,9 +85,9 @@ const SignUp = ({ history }) => {
 
           <div className="btn_area">
             <button type="submit" className="signup_btn">가입하기</button>
-            
+            <Link to="/">
               <button type="button" className="cancel_btn"><b>돌아가기</b></button>
-            
+            </Link>
           </div>
         </div>
       </form>

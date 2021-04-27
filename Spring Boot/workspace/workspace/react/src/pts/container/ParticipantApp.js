@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import { Header, Footer } from 'common'
 import ParticipantList from 'pts/component/ParticipantList'
 import Pagination from 'pts/component/Pagination'
 import 'pts/style/Participant.css'
+import 'pts/style/ParticipantList.css'
 
 const ParticipantApp = () => {
 
@@ -36,23 +38,31 @@ const ParticipantApp = () => {
   }, [])
 
   return (
-    <div className="participant">
-      <h3>참가자 리스트</h3>
+    <>
+      <Header />
+      <div className="participant">
+        <h1>참가자 리스트</h1>
 
-      <ParticipantList list={currentPosts} indexOfFirstPost={indexOfFirstPost} />
+        <form className="participant-form participant-list-form">
+          <div className="container">
+            <div className="content">
+              <ParticipantList list={currentPosts} indexOfFirstPost={indexOfFirstPost} />
 
-      <Pagination postsPerPage={postsPerPage} totalPosts={list.length} paginate={paginate} />
-    
-      <br />
-      <div className="btn">
-        <Link to="">
-          <button>홈으로</button>
-        </Link>
-        <Link to="/participants/register">
-          <button>등록</button>
-        </Link>
+              <Pagination postsPerPage={postsPerPage} totalPosts={list.length} paginate={paginate} />
+            </div>
+
+            <br />
+
+            <div className="btn_area">
+              <button type="submit" className="write_btn">
+                <Link to='/participants/register'><b>등록하기</b></Link>
+              </button>
+            </div>
+          </div>
+        </form>
       </div>
-    </div>
+      <Footer />
+    </>
   )
 }
 

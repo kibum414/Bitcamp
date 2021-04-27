@@ -2,7 +2,7 @@ import { Route } from 'react-router-dom';
 import { Home } from 'common/index'
 import { SignUp, Login, UserDetail, UserList, UserEdit } from 'user/index'
 import { News, SeoulCCTV } from 'board/index'
-import { ArticleList, ArticleWrite, ArticleDetail, ArticleUpdate } from 'article/index'
+import { ArticleApp, ArticleWrite, ArticleDetail, ArticleUpdate } from 'article/index'
 import { TodoApp } from 'todo/index'
 import { ParticipantApp, ParticipantRegister, ParticipantDetail, ParticipantModify } from 'pts/index';
 
@@ -20,7 +20,7 @@ const App = () => {
       <Route exact path='/board/seoul-cctv' component={SeoulCCTV} />
       <Route exact path='/todo' component={TodoApp} />
 
-      <Route exact path='/article/list' component={ArticleList} />
+      <Route exact path='/article' component={ArticleApp} />
       <Route exact path='/article/write' component={ArticleWrite} />
       <Route exact path='/article/detail' component={ArticleDetail} />
       <Route exact path='/article/update' component={ArticleUpdate} />

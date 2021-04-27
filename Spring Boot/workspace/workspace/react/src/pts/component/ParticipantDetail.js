@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import { Header, Footer } from 'common'
+import 'pts/style/Participant.css'
 
 const ParticipantDetail = (props) => {
   const [detail, setDetail] = useState({})
@@ -36,41 +38,51 @@ const ParticipantDetail = (props) => {
 
   return (
     <>
-      <table>
-        <tr>
-          <th>이름</th>
-          <td>{detail.name}</td>
-        </tr>
-        <tr>
-          <th>성별</th>
-          <td>{detail.gender}</td>
-        </tr>
-        <tr>
-          <th>생년월일</th>
-          <td>{detail.birthday}</td>
-        </tr>
-        <tr>
-          <th>전화번호</th>
-          <td>{detail.phoneNumber}</td>
-        </tr>
-        <tr>
-          <th>이메일</th>
-          <td>{detail.email}</td>
-        </tr>
-        <tr>
-          <th>신청일</th>
-          <td>{detail.regdate}</td>
-        </tr>
-      </table>
+      <Header />
+      <h1>캠페인 참가자 정보</h1>
 
-      <button onClick={deleteParticipant}>삭제</button>
-      <Link to={`/participants/modify/${detail.participantNo}`}>
-        <button>수정</button>
-      </Link>
-      <Link to="/participants/list">
-        <button>목록</button>
-      </Link>
-    </>  
+      <form className="participant-form">
+        <div className="container">
+          <div className="content">
+            <table>
+              <tr>
+                <th>이름</th>
+                <td>{detail.name}</td>
+              </tr>
+              <tr>
+                <th>성별</th>
+                <td>{detail.gender}</td>
+              </tr>
+              <tr>
+                <th>생년월일</th>
+                <td>{detail.birthday}</td>
+              </tr>
+              <tr>
+                <th>전화번호</th>
+                <td>{detail.phoneNumber}</td>
+              </tr>
+              <tr>
+                <th>이메일</th>
+                <td>{detail.email}</td>
+              </tr>
+              <tr>
+                <th>신청일</th>
+                <td>{detail.regdate}</td>
+              </tr>
+            </table>
+
+            <button onClick={deleteParticipant}>삭제</button>
+            <Link to={`/participants/modify/${detail.participantNo}`}>
+              <button>수정</button>
+            </Link>
+            <Link to="/participants/list">
+              <button>목록</button>
+            </Link>
+          </div>
+        </div>
+      </form>
+      <Footer />
+    </>
   )
 }
 

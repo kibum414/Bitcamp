@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { Header, Footer } from 'common'
 import 'pts/style/Participant.css'
 
 const ParticipantRegister = () => {
@@ -43,11 +44,15 @@ const ParticipantRegister = () => {
 
   return (
     <>
+      <Header />
       <h1>캠페인 참가 등록</h1>
-      
+
       <form className="participant-form" onSubmit={participantRegister}>
         <div className="container">
           <div className="content">
+            <label htmlFor="name"><b>캠페인 이름</b></label>
+            <input type="text" id="name" name="name" placeholder="이름" onChange={inputChange} required />
+
             <label htmlFor="name"><b>이름</b></label>
             <input type="text" id="name" name="name" placeholder="이름" onChange={inputChange} required />
 
@@ -76,6 +81,7 @@ const ParticipantRegister = () => {
           </div>
         </div>
       </form>
+      <Footer />
     </>
   )
 }

@@ -9,8 +9,6 @@
 }
 
 .participant-list-form th {
-  color: #333;
-  background: #f9f9f9;
   padding: 32px 31px 32px;
   text-align: center;
 }
@@ -35,21 +33,4 @@
   width: 60%;
   padding: 32px 31px 32px;
   text-align: left;
-}
-
-.participant-list-form .pagination {
-  text-align: center;
-  vertical-align: middle;
-}
-
-.participant-list-form .pagination > li {
-  display: inline-block;
-  width: 20px;
-  height: 30px;
-  margin-right: 1px;
-}
-
-.participant-list-form .pagination > li:hover {
-  color: red;
-  cursor: pointer;
 }
