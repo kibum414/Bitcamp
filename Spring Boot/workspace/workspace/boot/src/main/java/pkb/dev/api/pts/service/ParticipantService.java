@@ -1,7 +1,7 @@
 package pkb.dev.api.pts.service;
 
-import pkb.dev.api.pts.domain.Participant;
+import pkb.dev.api.pts.domain.ParticipantVo;
 
 public interface ParticipantService {
-	public Participant modify(long id, Participant participant);
+	public ParticipantVo modify(long id, ParticipantVo participant);
 }

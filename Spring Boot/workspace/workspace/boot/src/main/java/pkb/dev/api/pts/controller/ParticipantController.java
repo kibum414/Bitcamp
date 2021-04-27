@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import pkb.dev.api.pts.domain.Participant;
+import pkb.dev.api.pts.domain.ParticipantVo;
 import pkb.dev.api.pts.service.ParticipantServiceImpl;
 
 import lombok.RequiredArgsConstructor;
@@ -30,8 +30,8 @@ public class ParticipantController {
 	private final ParticipantServiceImpl service;
 	
 	@PostMapping("")
-	public ResponseEntity<Participant> register(
-			@Validated @RequestBody Participant participant) throws Exception {
+	public ResponseEntity<ParticipantVo> register(
+			@Validated @RequestBody ParticipantVo participant) throws Exception {
 		
 		System.out.println("Participant register");
 		
@@ -44,7 +44,7 @@ public class ParticipantController {
 	}
 	
 	@GetMapping("")
-	public ResponseEntity<List<Participant>> list() throws Exception {
+	public ResponseEntity<List<ParticipantVo>> list() throws Exception {
 		
 		System.out.println("Participant list");
 		
@@ -52,7 +52,7 @@ public class ParticipantController {
 	}
 	
 	@GetMapping("/{participantNo}")
-	public ResponseEntity<Optional<Participant>> detail(
+	public ResponseEntity<Optional<ParticipantVo>> detail(
 			@PathVariable("participantNo") Long participantNo) throws Exception {
 		
 		System.out.println("Participant read");
@@ -61,9 +61,9 @@ public class ParticipantController {
 	}
 	
 	@PutMapping("/{participantNo}")
-	public ResponseEntity<Participant> modify(
+	public ResponseEntity<ParticipantVo> modify(
 			@PathVariable("participantNo") Long participantNo, 
-			@Validated @RequestBody Participant participant) throws Exception {
+			@Validated @RequestBody ParticipantVo participant) throws Exception {
 		
 		System.out.println("Participant modify");
 		

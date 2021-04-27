@@ -7,14 +7,14 @@ import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 import pkb.dev.api.common.service.AbstractService;
-import pkb.dev.api.pts.domain.Participant;
+import pkb.dev.api.pts.domain.ParticipantVo;
 import pkb.dev.api.pts.repository.ParticipantRepository;
 
 import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
-public class ParticipantServiceImpl extends AbstractService<Participant> implements ParticipantService {
+public class ParticipantServiceImpl extends AbstractService<ParticipantVo> implements ParticipantService {
 
 	private final ParticipantRepository repo;
 
@@ -31,12 +31,12 @@ public class ParticipantServiceImpl extends AbstractService<Participant> impleme
 	}
 
 	@Override
-	public List<Participant> findAll() {
+	public List<ParticipantVo> findAll() {
 		return repo.findAll();
 	}
 
 	@Override
-	public Optional<Participant> findOne(Example<Participant> example) {
+	public Optional<ParticipantVo> findOne(Example<ParticipantVo> example) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -47,22 +47,22 @@ public class ParticipantServiceImpl extends AbstractService<Participant> impleme
 	}
 
 	@Override
-	public Optional<Participant> findById(long id) {
+	public Optional<ParticipantVo> findById(long id) {
 		return repo.findById(id);
 	}
 
 	@Override
-	public Participant save(Participant entity) {
+	public ParticipantVo save(ParticipantVo entity) {
 		return repo.save(entity);
 	}
 
 	@Override
-	public Participant getOne(long id) {
+	public ParticipantVo getOne(long id) {
 		return repo.getOne(id);
 	}
 
 	@Override
-	public Participant modify(long id, Participant participant) {
+	public ParticipantVo modify(long id, ParticipantVo participant) {
 		participant.setParticipantNo(id);
 		
 		repo.modify(participant.getName(), participant.getGender(), participant.getPhoneNumber(),

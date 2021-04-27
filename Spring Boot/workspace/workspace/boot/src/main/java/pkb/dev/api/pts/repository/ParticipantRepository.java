@@ -6,13 +6,13 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
-import pkb.dev.api.pts.domain.Participant;
+import pkb.dev.api.pts.domain.ParticipantVo;
 
 interface ParticipantCustomRepository {
 	
 }
 
-public interface ParticipantRepository extends JpaRepository<Participant, Long>, ParticipantCustomRepository {
+public interface ParticipantRepository extends JpaRepository<ParticipantVo, Long>, ParticipantCustomRepository {
 	
 	@Transactional
 	@Modifying

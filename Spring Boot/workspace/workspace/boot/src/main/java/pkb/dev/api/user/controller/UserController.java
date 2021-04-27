@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import pkb.dev.api.user.domain.User;
+import pkb.dev.api.user.domain.UserVo;
 import pkb.dev.api.user.service.UserServiceImpl;
 
 import lombok.RequiredArgsConstructor;
@@ -25,21 +25,21 @@ import lombok.RequiredArgsConstructor;
 @CrossOrigin(origins="*")
 @RequiredArgsConstructor
 public class UserController {
-	
+
 	private final UserServiceImpl service;
 	
 	@PostMapping("")
-	public ResponseEntity<?> register(@RequestBody User user) throws Exception {
+	public ResponseEntity<?> register(@RequestBody UserVo userVo) throws Exception {
 		
 		System.out.println("User Register");
 		
-		service.save(user);
+		service.save(userVo);
 		
-		return new ResponseEntity<>(user, HttpStatus.OK);
+		return new ResponseEntity<>(userVo, HttpStatus.OK);
 	}
 	
 	@GetMapping("")
-	public ResponseEntity<List<User>> list() throws Exception {
+	public ResponseEntity<List<UserVo>> list() throws Exception {
 		
 		System.out.println("User List");
 		
@@ -47,7 +47,7 @@ public class UserController {
 	}
 	
 	@GetMapping("/{userNo}")
-	public ResponseEntity<Optional<User>> read(
+	public ResponseEntity<Optional<UserVo>> read(
 			@PathVariable("userNo") Long userNo) throws Exception {
 		
 		System.out.println("User Read");
@@ -56,12 +56,12 @@ public class UserController {
 	}
 	
 	@PutMapping("/{userNo}")
-	public ResponseEntity<User> update(
-			@PathVariable("userNo") Long userNo, @RequestBody User user) {
+	public ResponseEntity<UserVo> update(
+			@PathVariable("userNo") Long userNo, @RequestBody UserVo userVo) {
 		
 		System.out.println("User Update");
 		
-		return new ResponseEntity<>(service.save(user), HttpStatus.OK);
+		return new ResponseEntity<>(service.save(userVo), HttpStatus.OK);
 	}
 	
 	@DeleteMapping("/{userNo}")
@@ -76,10 +76,10 @@ public class UserController {
 	}
 	
 	@PostMapping("/login")
-	public ResponseEntity<String> login(@RequestBody User user) {
+	public ResponseEntity<String> login(@RequestBody UserVo userVo) {
 		System.out.println("User Login");
 		
-		String username = service.login(user);
+		String username = service.login(userVo);
 		
 		if (username != null) {
 			return new ResponseEntity<>(HttpStatus.OK);
@@ -88,3 +88,20 @@ public class UserController {
 		}
 	}
 }
+
+/*
+웹 서버 :
+
+EC2 : IntelliJ
+RDS : DB
+S3 : VSCode
+
+RDS - 데이터베이스 생성
+데이터베이스 생성방식 선 표준 생성
+
+vpc : virtual private cloud(amazon vpc)
+아마존의 슬라이스 개념
+계정별로 아마존의 기능을 조각조각 내주는 것
+클라우드를 개인적으로 잘게 쪼개서 나누어준 것
+
+ */

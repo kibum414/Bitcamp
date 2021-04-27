@@ -1,16 +1,16 @@
 package pkb.dev.api.user.domain;
 
 
-import javax.persistence.*;
-
 import lombok.Data;
+
+import javax.persistence.*;
 
 import java.sql.Date;
 
 @Entity
 @Table(name="users")
 @Data
-public class User {
+public class UserVo {
 
 	@Id
 	@GeneratedValue

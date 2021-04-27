@@ -7,14 +7,14 @@ import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 import pkb.dev.api.common.service.AbstractService;
-import pkb.dev.api.user.domain.User;
+import pkb.dev.api.user.domain.UserVo;
 import pkb.dev.api.user.repository.UserRepository;
 
 import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
-public class UserServiceImpl extends AbstractService<User> implements UserService {
+public class UserServiceImpl extends AbstractService<UserVo> implements UserService {
 
 	private final UserRepository repo;
 
@@ -30,12 +30,12 @@ public class UserServiceImpl extends AbstractService<User> implements UserServic
 	}
 
 	@Override
-	public List<User> findAll() {
+	public List<UserVo> findAll() {
 		return repo.findAll();
 	}
 
 	@Override
-	public Optional<User> findOne(Example<User> example) {
+	public Optional<UserVo> findOne(Example<UserVo> example) {
 		return repo.findOne(example);
 	}
 
@@ -45,23 +45,23 @@ public class UserServiceImpl extends AbstractService<User> implements UserServic
 	}
 
 	@Override
-	public Optional<User> findById(long id) {
+	public Optional<UserVo> findById(long id) {
 		return repo.findById(id);
 	}
 
 	@Override
-	public User save(User entity) {
+	public UserVo save(UserVo entity) {
 		return repo.save(entity);
 	}
 
 	@Override
-	public User getOne(long id) {
+	public UserVo getOne(long id) {
 		return repo.getOne(id);
 	}
 
 	@Override
-	public String login(User user) {
-		return repo.login(user.getUsername(), user.getPassword());
+	public String login(UserVo userVo) {
+		return repo.login(userVo.getUsername(), userVo.getPassword());
 	}
 	
 }

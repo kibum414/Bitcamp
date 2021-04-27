@@ -1,19 +1,15 @@
 package pkb.dev.api.pts.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
 import lombok.Data;
+
+import javax.persistence.*;
 
 import java.sql.Date;
 
 @Entity
 @Table(name = "participants")
 @Data
-public class Participant {
+public class ParticipantVo {
 	
 	@Id
 	@GeneratedValue
