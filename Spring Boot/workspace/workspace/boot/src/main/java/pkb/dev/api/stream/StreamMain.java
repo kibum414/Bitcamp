@@ -2,12 +2,14 @@ package pkb.dev.api.stream;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.Map;
 import java.util.Scanner;
 import java.util.stream.Stream;
 
 import static pkb.dev.api.stream.RefUtil.rangeBelowRandom;
 
-class Student implements Comparable<Student> {
+//class Student implements Comparable<Map<String, Object>> {
+class Student implements Comparable<Map<String, Object>> {
     private String name;
     private String username; // ID
     private int grade;
@@ -56,14 +58,26 @@ class Student implements Comparable<Student> {
     public String toString() {
         return "Student{" +
                 "name='" + name + '\'' +
+                ", username='" + username + '\'' +
                 ", grade=" + grade +
                 ", score=" + score +
                 '}';
     }
 
     @Override
-    public int compareTo(Student o) {
-        return o.getScore() - this.getScore();
+    public int compareTo(Map<String, Object> map) {
+        Student student = (Student)map.get("student");
+        String prop = (String)map.get("prop"); // 키값
+        String option = (String)map.get("option");
+
+        switch (prop) {
+            case "name": break;
+            case "username": break;
+            case "grade": return student.getGrade() - this.getGrade();
+            case "score": break;
+        }
+
+        return 0;
     }
 }
 
@@ -105,23 +119,27 @@ public class StreamMain {
 
     }
     public static Stream<Student> ascGrade() {
-        return makeStream().sorted(Comparator.comparing(Student::getGrade)
-                .thenComparing(Comparator.naturalOrder()));
+//        return makeStream()
+//                .sorted(Comparator.comparing(Student::getGrade)
+//                        .thenComparing(Comparator.naturalOrder()));
+        return null;
     }
 
     public static Stream<Student> descScore() {
-        return makeStream().sorted(Comparator.comparing(Student::getScore)
-                .reversed());
+//        return makeStream()
+//                .sorted(Comparator.comparing(Student::getScore)
+//                        .reversed());
+        return null;
     }
 
     public static Stream<Student> ascName() {
-        Stream<String> studentStream = makeStream().map(Student::getName);
-
+//        return makeStream()
+//                .sorted(Comparator.comparing(Student::getName)
+//                        .thenComparing(Comparator.naturalOrder()));
         return null;
     }
 
     public static Stream<Student> ascUsername() {
-
         return null;
     }
 }
