@@ -46,7 +46,19 @@ public class DummyGenerator {
 
         shuffle(id);
 
-        return RefUtil.objToStr.apply(id).substring(0, 4);
+        StringBuffer sb = new StringBuffer();
+        for (int i = 0; i < 5; i++) {
+            sb.append(id.get(i));
+        }
+        /*
+         * sb.insert(index, "<입력값>")
+         * sb.append("<입력값>")
+         * sb.replace(index, sb.length(), "<대체값>")
+         * sb.delete(start-index, end-index)
+         * sb.deleteCharAt(index)
+         */
+        return sb.toString();
+        // return RefUtil.objToStr.apply(id).substring(0, 4);
     }
 
     public String makeEmail() {
