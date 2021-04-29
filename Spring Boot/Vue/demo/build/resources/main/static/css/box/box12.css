@@ -1,0 +1,32 @@
+div {
+    width: 200px;
+    height: auto;
+    background: #0094ff;
+    display: inline-block;
+    margin: 15px;
+    color: white;
+}
+.box1 {
+    /* 상 좌 하 우 */
+    padding: 10px 30px 10px 30px;
+}
+.box2 {
+    padding: 10px 30px;
+}
+.box3 {
+    padding: 10px;
+}
+.box4 {
+    padding: 10px 30px 10px;
+}
+.box5 {
+    /* 앞: 위 아래 */
+    /* 뒤: 좌 우 */
+    padding: 10px 20px;
+}
+.box6 {
+    padding: 0px 20px;
+}
+.box7 {
+    padding: 0px 0px;
+}

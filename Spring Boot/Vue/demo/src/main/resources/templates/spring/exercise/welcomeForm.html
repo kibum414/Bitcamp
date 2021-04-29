@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>회원 가입 완료</title>
+</head>
+<body>
+    <h2>회원 가입 완료 !</h2>
+
+    <form th:action="@{/exercise/home}" method="post">
+        <button type="submit">홈</button>
+    </form>
+
+    <form th:action="@{/exercise/home}" method="get">
+        <button type="submit" name="login">로그인</button>
+    </form>
+</body>
+</html>

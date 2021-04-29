@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Board Modify</title>
+    <script type="text/javascript"
+            src="https://code.jquery.com/jquery-3.5.1.min.js">
+    </script>
+</head>
+
+<script>
+    // $(document).ready(function() { })
+    // 자바스크립트의 onload와 같은 기능
+    // 해당 html 페이지가 화면에 뿌려지고 나서
+    // ready 안에 서술된 이벤트들이 동작 준비
+    // $(function(){ }) 로 요약 가능
+
+    $(document).ready(function() {
+        // board 객체를 받아와서 formObj에 저장
+        var formObj = $("#board")
+
+        // #: 태그 id
+        // btnModify: btnModify 라는 이름의 태그
+        // click: 클릭하였을 때
+        // {}: 안의 내용 실행
+        // 수정 버튼이 클릭되면
+        $("#btnModify").on("click", function() {
+            // /modify 로
+            formObj.attr("action", "modify")
+            // post 방식을 사용하여
+            formObj.attr("method", "post")
+            // 이동
+            formObj.submit()
+        })
+
+        // 목록 버튼이 클릭되면
+        $("#btnList").on("click", function() {
+            // /list 로 이동
+            self.location = "list"
+        })
+    })
+</script>
+
+<body>
+    <h2>수정하기</h2>
+
+    <!-- get에서 board 전체를 넘김 (public Board read()) -->
+    <form id="board" action="success.html"
+          th:action="@{modify}"
+          th:object="${board}" method="post">
+        <input type="hidden" name="boardNo" th:field="*{boardNo}"/>
+        <table>
+            <tr>
+                <td>제목</td>
+                <td>
+                    <!-- 여기선 수정해야 하므로
+                         read 와 다르게 readonly 속성을 뺌 -->
+                    <input type="text" name="title"
+                           th:field="*{title}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>작성자</td>
+                <td>
+                    <!-- 작성자는 수정하면 안 되므로
+                         readonly 속성 유지 -->
+                    <input type="text" name="writer"
+                           th:field="*{writer}"
+                           readonly="readonly"/>
+                </td>
+            </tr>
+            <tr>
+                <td>본문</td>
+                <td>
+                    <textarea name="content"
+                              th:field="*{content}"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <button type="submit" id="btnModify">수정</button>
+    <button type="submit" id="btnList">목록</button>
+</body>
+</html>

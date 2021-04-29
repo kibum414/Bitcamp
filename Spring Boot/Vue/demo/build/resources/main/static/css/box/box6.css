@@ -1,0 +1,28 @@
+div {
+    width: 200px;
+    height: 100px;
+    /* inline-block 출력 결과 */
+    /* box1 box2 */
+    /* box3 box4 */
+    display: inline-block;
+    margin: 10px;
+    border-width: 4px;
+}
+.box1 {
+    /* solid: 실선 */
+    border-style: solid;
+}
+.box2 {
+    /* dotted: 점으로 된 선 */
+    border-style: dotted;
+}
+.box3 {
+    /* groove: 액자 느낌 */
+    border-style: groove;
+    border-color: #0fdce8;
+}
+.box4 {
+    /* dashed: 실선이 중간중간 끊긴 선 */
+    border-style: dashed;
+    border-color: #7777ff;
+}
