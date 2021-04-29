@@ -1,4 +1,0 @@
-See file:///Users/superstar_pkb/proj/demo/build/tmp/compileHelloSharedLibraryHelloC/output.txt for all output for compileHelloSharedLibraryHelloC.
-compiling hello.c successful.
-
-Finished compileHelloSharedLibraryHelloC, see full log file:///Users/superstar_pkb/proj/demo/build/tmp/compileHelloSharedLibraryHelloC/output.txt.

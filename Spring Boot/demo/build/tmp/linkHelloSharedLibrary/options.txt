@@ -1,7 +1,0 @@
--shared
--Wl,-install_name,libhello.dylib
--o
-/Users/superstar_pkb/proj/demo/build/libs/hello/shared/libhello.dylib
-/Users/superstar_pkb/proj/demo/build/objs/hello/shared/helloC/46gd7i53yh3z9kv2bj1ure0t2/hello.o
--mmacosx-version-min=10.4
--m64
