@@ -1,0 +1,19 @@
+package com.example.demo.bbs.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.data.domain.Example;
+
+import com.example.demo.bbs.domain.Article;
+
+public interface ArticleService {
+	public long count();
+	public boolean existsById(Long id);
+	public List<Article> findAll();
+	public Optional<Article> findOne(Example<Article> example);
+	public void deleteById(Long id);
+	public Optional<Article> findById(Long id);
+	public Article save(Article entity);
+	public Article getOne(Long id);
+}
