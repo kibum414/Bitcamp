@@ -1,14 +1,11 @@
 package kb.dev.api.stream;
 
-import java.util.Arrays;
 import java.util.Comparator;
-import java.util.Map;
 import java.util.Scanner;
 import java.util.stream.Stream;
 
 import static kb.dev.api.stream.RefUtil.rangeBelowRandom;
 
-//class Student implements Comparable<Map<String, Object>> {
 class Student implements Comparable<Student> {
     private String name;
     private String username; // ID
@@ -66,24 +63,8 @@ class Student implements Comparable<Student> {
 
     @Override
     public int compareTo(Student s) {
-        return s.getScore() - this.getScore();
+        return this.getScore() - s.getScore();
     }
-
-//    @Override
-//    public int compareTo(Map<String, Object> map) {
-//        Student student = (Student)map.get("student");
-//        String prop = (String)map.get("prop"); // 키값
-//        String option = (String)map.get("option");
-//
-//        switch (prop) {
-//            case "name": break;
-//            case "username": break;
-//            case "grade": return student.getGrade() - this.getGrade();
-//            case "score": break;
-//        }
-//
-//        return 0;
-//    }
 }
 
 public class StreamMain {
@@ -97,14 +78,26 @@ public class StreamMain {
         Scanner scan = new Scanner(System.in);
 
         while(true) {
-            System.out.println("메뉴: 0.EXIT 1.학년 오름차순 2.전학년 성적 내림차순 3.학년별 성적 내림차순 4.이름 오름차순 5.ID 오름차순");
+            System.out.println("메뉴: 0.EXIT 1.학년 오름차순 2.학년별 성적 내림차순 3.전체 성적 내림차순 4.이름 오름차순 5.ID 오름차순");
 
             switch (scan.nextInt()) {
-                case 0: return;
-                case 1: ascGrade().forEach(System.out::println); break;
-                case 2: descScore().forEach(System.out::println); break;
-                case 3: ascName().forEach(System.out::println); break;
-                case 4: ascUsername().forEach(System.out::println); break;
+                case 0:
+                    return;
+                case 1:
+                    ascGrade().forEach(System.out::println);
+                    break;
+                case 2:
+                    descScoreByGrade().forEach(System.out::println);
+                    break;
+                case 3:
+                    descScore().forEach(System.out::println);
+                    break;
+                case 4:
+                    ascName().forEach(System.out::println);
+                    break;
+                case 5:
+                    ascUsername().forEach(System.out::println);
+                    break;
             }
         }
     }
@@ -124,31 +117,42 @@ public class StreamMain {
                 );
 
     }
+
+    // 학년 오름차순 -> 성적 오름차순
     public static Stream<Student> ascGrade() {
         return makeStream()
                 .sorted(Comparator.comparing(Student::getGrade) // Comparator.comparing(String s)
                         .thenComparing(Comparator.naturalOrder())); // Comparable compareTo(Object o)
     }
 
-    public static Stream<Student> descGrade() {
+    // 학년 내림차순 -> 성적 내림차순
+    public static Stream<Student> descScoreByGrade() {
         return makeStream()
-                .sorted(Comparator.comparing(Student::getScore).reversed() // Comparator.comparing(String s)
+                .sorted(Comparator.comparing(Student::getGrade).reversed() // Comparator.comparing(String s)
                         .thenComparing(Comparator.reverseOrder())); // Comparable compareTo(Object o)
     }
 
+    // 성적 내림차순
     public static Stream<Student> descScore() {
         return makeStream()
-                .sorted(Comparator.naturalOrder()); // Comparable compareTo(Object o)
+                .sorted(Comparator.reverseOrder()); // Comparable compareTo(Object o)
     }
 
+    // 이름 오름차순 -> 성적 오름차순
     public static Stream<Student> ascName() {
         return makeStream()
                 .sorted(Comparator.comparing(Student::getName)
                         .thenComparing(Comparator.naturalOrder()));
     }
 
+    // ID 오름차순
     public static Stream<Student> ascUsername() {
         return makeStream()
+                .map(student -> {
+                    student.setUsername(student.getUsername().toLowerCase());
+                    return student;
+                })
+                .distinct()
                 .sorted(Comparator.comparing(Student::getUsername));
     }
 }
