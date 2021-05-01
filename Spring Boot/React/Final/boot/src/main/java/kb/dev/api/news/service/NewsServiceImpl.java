@@ -1,19 +1,23 @@
 package kb.dev.api.news.service;
 
 import kb.dev.api.common.service.AbstractService;
+import kb.dev.api.common.domain.Crawler;
 import kb.dev.api.news.domain.News;
 import kb.dev.api.news.repository.NewsRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.java.Log;
-import org.jsoup.Connection;
-import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+
+import static kb.dev.api.common.service.CrawlerServiceImpl.connectUrl;
 
 @Log
 @Service
@@ -24,94 +28,51 @@ public class NewsServiceImpl extends AbstractService<News> implements NewsServic
     private final NewsRepository repository;
 
     @Override
-    public Document connectUrl(String url) throws IOException {
-//        log.info("connectUrl(): " + url);
-//        Document document = null;
-//        Connection.Response homepage =
-//                Jsoup
-//                        .connect(url)
-//                        .method(Connection.Method.GET)
-//                        .userAgent("Mozila/5.0 (X11; Linux x86_64; rv:10.0) " +
-//                                "Gecko/20100101 Firefox/10.0 " +
-//                                "AppleWebKit/537.36 (KHTML, like Gecko) " +
-//                                "Chrome/51.0.2704.106 Safari/537.36")
-//                        .execute();
-//
-//        return homepage.parse();
-        return Jsoup
-                .connect(url)
-                .method(Connection.Method.GET)
-                .userAgent("Mozila/5.0 (X11; Linux x86_64; rv:10.0) " +
-                        "Gecko/20100101 Firefox/10.0 " +
-                        "AppleWebKit/537.36 (KHTML, like Gecko) " +
-                        "Chrome/51.0.2704.106 Safari/537.36")
-                .execute()
-                .parse();
-    }
-
-    @Override
-    public List<News> newsFindAll() {
-        return null;
-    }
-
-    @Override
-    public void crawlingHome() {
-
-    }
-
-    @Override
-    public Long saveAll(String category) throws IOException {
-        Document document = connectUrl("https://news.daum.net/" + category);
-// Bugs Document document = connectUrl("https://music.bugs.co.kr/" + category); // chart
-// CGV  Document document = connectUrl("http://www.cgv.co.kr/" + category); // movies
+    public List<News> saveAll(Crawler crawler) throws IOException {
+        Document document = connectUrl(crawler.getUrl());
         repository.deleteAll();
 
-        Elements elements = document.select("ul.tab_aside>li.on>div.cont_aside>ol.list_ranking>li>strong.tit_g>a");
-// Bugs Elements elements = document.select("div.innerContainer>div>table.list>tbody>tr>th>p.title>a");
-// CGV  Elements elements = document.select("div.wrap-movie-chart>div.sect-movie-chart>ol>li>div.box-contents>a>strong.title");
+        Elements elements = document.select(crawler.getCssQuery());
 
-        int count = 0;
+        List<News> newsList = new ArrayList<>();
 
         for (int i = 0; i < elements.size(); i++) {
             News news = new News();
 
             news.setTitle(elements.get(i).text());
             news.setAddress(elements.get(i).attr("href"));
-            news.setCategory(category);
-            // repository.save(news);
-
-            count++;
-            System.out.println("********** News 정보: " + news.toString());
+            news.setCategory(crawler.getCategory());
+            newsList.add(news);
+            repository.save(news);
         }
-        System.out.println("********** 크롤링 카운트: " + count);
 
-        return 0L;
-    }
-
-    @Override // 뉴스가 언론사에 의해 막혔을 때
-    public Optional<News> findByNewsNo(String newsNo) {
-        Optional.ofNullable(repository.findByNewsNo(newsNo)).ifPresent(System.out::println);
-        return Optional.ofNullable(repository.findByNewsNo(newsNo));
+        return newsList;
     }
 
     @Override
-    public void optionalInit(String newsNo) {
+    public Page<News> findAll(final Pageable pageable) {
+        return repository.findAll(pageable);
+    }
+
+    @Override // 뉴스가 언론사에 의해 막혔을 때
+    public Optional<News> findByNewsId(String newsId) {
+        Optional.ofNullable(repository.findByNewsId(newsId)).ifPresent(System.out::println);
+        return Optional.ofNullable(repository.findByNewsId(newsId));
+    }
+
+    @Override
+    public void optionalInit(String newsId) {
         Optional<String> optVal = Optional.empty(); // Optional Initializer
     }
 
     @Override
-    public long count() {
+    public Long count() {
         return repository.count();
     }
 
     @Override
-    public boolean existsById(long id) {
+    public Boolean existsById(long id) {
         return repository.existsById(id);
-    }
-
-    @Override
-    public List<News> findAll() {
-        return repository.findAll();
     }
 
     @Override
@@ -125,14 +86,14 @@ public class NewsServiceImpl extends AbstractService<News> implements NewsServic
     }
 
     @Override
-    public long save(News news) {
+    public Long save(News news) {
         // 스크래핑이 발생함
 
         return (repository.save(news) != null) ? 1L : 0L;
     }
 
     @Override
-    public long delete(News news) {
+    public Long delete(News news) {
         repository.delete(news);
 
         // orElse : null 이면 () 내부 값 리턴

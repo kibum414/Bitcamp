@@ -4,6 +4,8 @@ import kb.dev.api.common.service.AbstractService;
 import kb.dev.api.participant.domain.Participant;
 import kb.dev.api.participant.repository.ParticipantRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,18 +18,18 @@ public class ParticipantServiceImpl extends AbstractService<Participant> impleme
     private final ParticipantRepository repository;
 
     @Override
-    public long count() {
+    public Long count() {
         return repository.count();
     }
 
     @Override
-    public boolean existsById(long id) {
+    public Boolean existsById(long id) {
         return repository.existsById(id);
     }
 
     @Override
-    public List<Participant> findAll() {
-        return repository.findAll();
+    public Page<Participant> findAll(Pageable pageable) {
+        return repository.findAll(pageable);
     }
 
     @Override
@@ -41,12 +43,12 @@ public class ParticipantServiceImpl extends AbstractService<Participant> impleme
     }
 
     @Override
-    public long save(Participant participant) {
+    public Long save(Participant participant) {
         return (repository.save(participant) != null) ? 1L : 0L;
     }
 
     @Override
-    public long delete(Participant participant) {
+    public Long delete(Participant participant) {
         repository.delete(participant);
 
         return (findById(participant.getParticipantNo()).orElse(null) == null) ? 1L : 0L;

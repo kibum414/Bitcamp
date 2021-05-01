@@ -4,23 +4,25 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.domain.Example;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 
 public abstract class AbstractService<T> {
 
-	public abstract long count();
+	public abstract Long count();
 
-	public abstract boolean existsById(long id);
+	public abstract Boolean existsById(long id);
 
-	public abstract List<T> findAll();
+	public abstract Page<T> findAll(Pageable pageable);
 
 	public abstract Optional<T> findById(long id);
 
 	public abstract Optional<T> getOne(long id);
 
-	public abstract long save(T t);
+	public abstract Long save(T t);
 
-	public abstract long delete(T t);
+	public abstract Long delete(T t);
 
 	/*
 	public abstract long count();
