@@ -1,8 +1,7 @@
 package kb.dev.api.file;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import kb.dev.api.board.Board;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "files")
@@ -21,4 +20,7 @@ public class FileVo {
     @Column(name = "fsize")
     private long fsize;
 
+//    @ManyToOne
+//    @JoinColumn(name = "board_id")
+//    Board board;
 }

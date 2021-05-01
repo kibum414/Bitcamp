@@ -1,9 +1,10 @@
 package kb.dev.api.board;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import kb.dev.api.file.FileVo;
+
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "boards")
@@ -15,4 +16,13 @@ public class Board {
 
     @Column(name = "title")
     private String title;
+
+    @Column(name = "writer")
+    private String writer;
+
+    @Column(name = "content")
+    private String content;
+
+//    @OneToMany(mappedBy = "board")
+//    List<FileVo> files = new ArrayList<>();
 }
