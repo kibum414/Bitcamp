@@ -7,10 +7,10 @@ import javax.persistence.*;
 
 import java.sql.Date;
 
+@Data
 @Entity
 @Table(name="users")
-@Data
-public class User {
+public class UserVo {
 
 	@Id
 	@GeneratedValue
