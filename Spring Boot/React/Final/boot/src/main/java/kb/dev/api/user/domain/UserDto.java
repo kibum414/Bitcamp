@@ -1,33 +1,40 @@
 package kb.dev.api.user.domain;
 
-import java.io.Serializable;
 import java.sql.Date;
+import java.util.List;
 
-import org.springframework.stereotype.Component;
+import io.swagger.annotations.ApiModelProperty;
 
 import lombok.Data;
 
-@Component
 @Data
-public class UserDto implements Serializable {
-	
-	private static final long serialVersionUID = 1L;
+public class UserDto {
 
-	private long userNo;
-	
+	@ApiModelProperty(position = 0)
 	private String username;
-	
-	private String password;
-	
+
+	@ApiModelProperty(position = 1)
 	private String name;
-	
-	private String birthday;
-	
-	private String gender;
-	
+
+	@ApiModelProperty(position = 2)
+	private String password;
+
+	@ApiModelProperty(position = 3)
 	private String email;
-	
+
+	@ApiModelProperty(position = 4)
+	private String birthday;
+
+	@ApiModelProperty(position = 5)
+	private String gender;
+
+	@ApiModelProperty(position = 6)
 	private String phoneNumber;
-	
+
+	@ApiModelProperty(position = 7)
 	private Date regDate;
+
+	@ApiModelProperty(position = 8)
+	private List<Role> roles;
+
 }
