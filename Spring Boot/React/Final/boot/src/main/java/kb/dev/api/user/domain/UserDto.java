@@ -35,6 +35,9 @@ public class UserDto {
 	private Date regDate;
 
 	@ApiModelProperty(position = 8)
+	private String token;
+
+	@ApiModelProperty(position = 9)
 	private List<Role> roles;
 
 }
