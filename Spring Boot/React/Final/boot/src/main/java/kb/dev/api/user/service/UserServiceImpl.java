@@ -64,5 +64,10 @@ public class UserServiceImpl implements UserService {
         }
     }
 
+    @Override
+    public List<UserVo> findAll() {
+        // userRepository.findAll().stream().map(user -> modelMapper.map(user, UserDto.class)).collect(Collectors.toList());
+        return userRepository.findAll();
+    }
 
 }
