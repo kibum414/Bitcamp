@@ -1,0 +1,100 @@
+[
+    {
+        "userNo": 1,
+        "username": "aaaa",
+        "password": "$2a$10$psRyIcLgEtKyFpGcMPnlxuW.r/Qo30tSw5CabJZsY2v1Pq7m.grVW",
+        "name": "abc",
+        "birthday": null,
+        "gender": null,
+        "email": "aaaa@test.com",
+        "phoneNumber": null,
+        "regDate": null,
+        "roles": [
+            "USER"
+        ]
+    },
+    {
+        "userNo": 2,
+        "username": "bbb",
+        "password": "$2a$10$7YEIFcet6JZgmR1wWVUfK.p4yZ6MnEe0M2fIyeWmOeIihRLJTmqPm",
+        "name": "bcd",
+        "birthday": null,
+        "gender": null,
+        "email": "bbb@test.com",
+        "phoneNumber": null,
+        "regDate": null,
+        "roles": [
+            "USER"
+        ]
+    },
+    {
+        "userNo": 3,
+        "username": "ccc",
+        "password": "$2a$10$8yeZMCEu6Eb7FMmTUArs1eM/FtCFaRiHPz1kadi1M4P9AoFkqM.Ra",
+        "name": "cde",
+        "birthday": null,
+        "gender": null,
+        "email": "ccc@test.com",
+        "phoneNumber": null,
+        "regDate": null,
+        "roles": [
+            "USER"
+        ]
+    },
+    {
+        "userNo": 4,
+        "username": "ddd",
+        "password": "$2a$10$0Kc/7MKT4BJmsXLFM1t0He.M.aZE5JSsPzcPSkubjYIdJNp3HVQl6",
+        "name": "def",
+        "birthday": null,
+        "gender": null,
+        "email": "ddd@test.com",
+        "phoneNumber": null,
+        "regDate": null,
+        "roles": [
+            "USER"
+        ]
+    },
+    {
+        "userNo": 5,
+        "username": "eee",
+        "password": "$2a$10$4HRQGvEMCuXFKT8tV7KSM.60EfiDNnZRxPSE8h0B0ot1CUr/999ae",
+        "name": "efg",
+        "birthday": null,
+        "gender": null,
+        "email": "eee@test.com",
+        "phoneNumber": null,
+        "regDate": null,
+        "roles": [
+            "USER"
+        ]
+    },
+    {
+        "userNo": 6,
+        "username": "fff",
+        "password": "$2a$10$vH4KNn72cDlwhjdiYo7P9OBNyv3sloC7s1zw/Jw9yD7O42MTOYyki",
+        "name": "fgh",
+        "birthday": null,
+        "gender": null,
+        "email": "fff@test.com",
+        "phoneNumber": null,
+        "regDate": null,
+        "roles": [
+            "USER"
+        ]
+    },
+    {
+        "userNo": 7,
+        "username": "ggg",
+        "password": "$2a$10$HR/nUUDKq8wkCmav0aTWzuy0IIVO8ju4ykTjy3.Dg9eJEwAWO1Fh2",
+        "name": "ghi",
+        "birthday": null,
+        "gender": null,
+        "email": "ggg@test.com",
+        "phoneNumber": null,
+        "regDate": null,
+        "roles": [
+            "USER"
+        ]
+    }
+]
