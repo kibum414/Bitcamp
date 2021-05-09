@@ -3,8 +3,8 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { Header, Footer } from 'common'
 import { ParticipantList, Pagination } from 'participant'
-import 'pts/style/Participant.css'
-import 'pts/style/ParticipantList.css'
+import 'participant/style/Participant.css'
+import 'participant/style/ParticipantList.css'
 
 const ParticipantApp = () => {
 

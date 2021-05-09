@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Header, Footer } from 'common'
-import 'pts/style/Participant.css'
+import 'participant/style/Participant.css'
 
 const ParticipantRegister = () => {
 
