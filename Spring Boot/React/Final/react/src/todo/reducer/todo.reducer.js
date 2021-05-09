@@ -24,7 +24,7 @@ const todoSlice = createSlice({
     },
     deleteTodo(state, { payload }) {
       if (payload.done) {
-        state.doneTodoList.splice(state.doneTodoList.findIndex(todo=>todo.id === payload.id), 1)
+        state.doneTodoList.splice(state.doneTodoList.findIndex(todo => todo.id === payload.id), 1)
       } else {
         state.todoList.splice(state.todoList.findIndex(todo => todo.id === payload.id), 1)
       }
@@ -52,7 +52,7 @@ const todoSlice = createSlice({
       } else {
         const index = state.todoList.findIndex(todo => todo.id === payload.id)
         state.todoList[index].done = !state.todoList[index].done
-        
+
         state.doneTodoList.push(state.todoList[index])
         state.todoList.splice(index, 1)
       }
