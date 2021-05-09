@@ -1,6 +1,6 @@
 import { Route } from 'react-router-dom';
 import { Home } from 'common/index'
-import { SignUp, Login, UserDetail, UserList, UserEdit } from 'user/index'
+import { SignUp, Login, UserDetail, UserApp, UserEdit } from 'user/index'
 import { News, SeoulCCTV } from 'board/index'
 import { ArticleApp, ArticleWrite, ArticleDetail, ArticleUpdate } from 'article/index'
 import { TodoApp } from 'todo/index'
@@ -12,7 +12,7 @@ const App = () => {
       <Route exact path='/' component={Home} />
       <Route exact path='/signup' component={SignUp} />
       <Route exact path='/login' component={Login} />
-      <Route exact path='/user' component={UserList} />
+      <Route exact path='/user' component={UserApp} />
       <Route exact path='/user/detail' component={UserDetail} />
       <Route exact path='/user/edit' component={UserEdit} />
 

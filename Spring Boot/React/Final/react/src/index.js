@@ -5,12 +5,7 @@ import App from 'App';
 import reportWebVitals from 'reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { combineReducers } from 'redux';
-import { configureStore } from '@reduxjs/toolkit';
-import todoSlice from 'todo/reducer/todo.reducer'
-
-const rootReducer = combineReducers({ todoSlice })
-const store = configureStore({ reducer: rootReducer })
+import store from 'store/index';
 
 ReactDOM.render(
   <Provider store={store}>
