@@ -30,6 +30,9 @@ const Header = () => {
               <li>
                 <Link to={'/signup'}>SIGN UP</Link>
               </li>
+              <li>
+                <Link to={'/user'}>USERS</Link>
+              </li>
             </ul>
           </div>
           <div className="collapse navbar-collapse" id="myNavbar">
