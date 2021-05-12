@@ -42,8 +42,8 @@ public class UserController {
         return ResponseEntity.ok(userService.signin(modelMapper.map(user, UserVo.class)));
     }
 
-    @GetMapping("/fetch")
-    public ResponseEntity<List<UserVo>> fetch() {
+    @GetMapping("/findAll")
+    public ResponseEntity<List<UserVo>> list() {
         return ResponseEntity.ok(userService.findAll());
     }
 

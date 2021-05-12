@@ -43,6 +43,9 @@ public class UserVo {
 	@Column(name = "reg_date")
 	private Date regDate;
 
+	@Column(name = "edit_date")
+	private Date editDate;
+
 	// 접속할 때 바로 알려주기 위해 즉시 할당. Authority
 	@ElementCollection(fetch = FetchType.EAGER)
 	List<Role> roles;

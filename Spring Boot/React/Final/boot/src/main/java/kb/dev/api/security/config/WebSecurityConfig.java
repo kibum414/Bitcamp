@@ -47,7 +47,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/users/signin").permitAll() // 토큰이 없지만 예외적으로 접근을 허용하기 위해 (로그인, 회원가입 한 사람들)
                 .antMatchers("/users/signup").permitAll()
-                .antMatchers("/users/fetch").permitAll()
+                .antMatchers("/users/findAll").permitAll()
                 .antMatchers("/h2-console/**/**").permitAll() // ant 표기법 (** : 0개 이상의 폴더, * : 0개 이상의 파일)
                 .anyRequest().authenticated(); // 나머지 요청들은 인증된 사용자만 접근 허용
         http.exceptionHandling().accessDeniedPage("/login"); // 실패했을 때 뜨는 화면
