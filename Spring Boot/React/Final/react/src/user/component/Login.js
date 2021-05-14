@@ -50,18 +50,27 @@ const Login = () => {
       <form className="user-form" onSubmit={userLogin}>
         <div className="container">
           <div className="content">
-            <label htmlFor="username"><b>아이디</b></label>
-            <input type="text" id="username" name="username" placeholder="아이디" onChange={inputChange} required />
+            <fieldset className="login_form">
+            <div className="id_area">
+              <div className="input_row">
+                <span className="input_box">
+                  <label for="id" id="label_id_area" className="lbl" style={{ display: "block" }}>아이디</label>
+                  <input type="text" id="id" name="id" placeholder="아이디" className="int" maxlength="41" />
+                </span>
+              </div>
+            </div>
 
-            <label htmlFor="password"><b>비밀번호</b></label>
-            <input type="password" id="password" name="password" placeholder="비밀번호" onChange={inputChange} required />
-          </div>
+            <div className="pw_area">
+              <input type="password" id="password" name="password" placeholder="비밀번호" onChange={inputChange} required />
+            </div>
 
-          <div className="btn_area">
-            <button type="submit" className="login_btn"><b>로그인</b></button>
-            <Link to="/">
-              <button type="button" className="cancel_btn"><b>돌아가기</b></button>
-            </Link>
+            <div className="btn_area">
+              <button type="submit" className="login_btn"><b>로그인</b></button>
+              <Link to="/">
+                <button type="button" className="cancel_btn"><b>돌아가기</b></button>
+              </Link>
+              </div>
+            </fieldset>
           </div>
         </div>
       </form>
