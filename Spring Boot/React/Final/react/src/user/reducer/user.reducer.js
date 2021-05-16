@@ -15,8 +15,6 @@ export const getUserList = createAsyncThunk(
   }
 )
 
-
-
 // 콜백 : 호출될 때만 작동
 const isRejectedAction = action => (action.type.endsWith('rejected'))
 
